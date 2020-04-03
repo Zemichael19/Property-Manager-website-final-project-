@@ -1,9 +1,9 @@
 
-// Model for the course collection.
+// Model for the property collection.
 const mongoose = require('mongoose');
 
 // Define the schema
-const Course = new mongoose.Schema({
+const Property = new mongoose.Schema({
   _id: String,
   title: String,
   description: String,
