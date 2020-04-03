@@ -3,7 +3,13 @@ const mongoose = require('mongoose');
 
 // Define the schema
 const Apartment = new mongoose.Schema({
-
+  n_rooms: Number,
+  n_bathrooms: Number,
+  listed: Boolean,
+  furnished: Boolean,
+  floor: Number,
+  sqFoot: Number,
+  
 
 
 
