@@ -3,10 +3,20 @@ const mongoose = require('mongoose');
 
 // Define the schema
 const Apartment = new mongoose.Schema({
-  _id: String,
-  title: String,
-  description: String,
-  prereqs: [String]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
 // Export the model
