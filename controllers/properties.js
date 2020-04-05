@@ -1,10 +1,10 @@
-// Controller for the course collection.
-const Course = require('../models/course');
+// Controller for the properties collection.
+const Property = require('../models/course');
 
-// GET /courses
+// GET /properties
 module.exports.index = function(request, response, next) {
-  Course.distinct('_id')
-    .then(courseIDs => response.redirect(`/courses/${courseIDs[0]}`))
+  Property.distinct('_id')
+    .then(courseIDs => response.redirect(`/properties/${courseIDs[0]}`))
     .catch(error => next(error));
 };
 
