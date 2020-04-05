@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const connect = require('./db');
-const Property = require('./manage/property');
-const Apartment = require('./manage/apartment');
+const Property = require('./models/property');
+const Apartment = require('./models/apartment');
 
 // Connect to the database
 connect();
