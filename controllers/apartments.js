@@ -1,11 +1,11 @@
 // Controller for the section collection.
-const Section = require('../models/section');
+const Apartment = require('../models/apartment');
 
 // GET /sections?sort=
 module.exports.index = function(request, response, next) {
-  const order = request.query.sort || 'course'; // Default to sort by course
+  const order = request.query.sort || 'u_num'; // Default to sort by unit number
 
-  Section.find().sort(order)
-    .then(sections => response.render('sections/index', {sections: sections, order: order}))
+  Apartment.find().sort(order)
+    .then(apartments => response.render('apartments/index', {apartments: apartments, order: order}))
     .catch(error => next(error));
 };
