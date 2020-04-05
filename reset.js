@@ -7,11 +7,8 @@ const Apartment = require('./models/apartment');
 connect();
 
 const properties = [
-  new Property({address:'Manhattan', n_apart:200}),
-  new Property({address:'Bronx', n_apart:250}),
-  new Property({address:'Brooklyn', n_apart:300}),
-  new Property({address:'Queens', n_apart:320}),
-  new Property({address:'Staten Island', n_apart:400}),
+  new Property({_id:'P1' ,address:'Manhattan', n_apart:2}),
+  new Property({_id:'P2' ,address:'Bronx', n_apart:3}),
 ];
 
 
