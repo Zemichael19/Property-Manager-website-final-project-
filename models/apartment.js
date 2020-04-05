@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 // Define the schema
 const Apartment = new mongoose.Schema({
+    property: mongoose.ObjectId,
     n_rooms: Number,
     n_bathrooms: Number,
     listed: Boolean,

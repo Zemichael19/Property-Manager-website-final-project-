@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 
 // Define the schema
 const Property = new mongoose.Schema({
-  _id: String,
   address: String,
   n_apart: Number,
 });
