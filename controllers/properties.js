@@ -4,22 +4,22 @@ const Property = require('../models/property');
 // GET /properties
 module.exports.index = function(request, response, next) {
   Property.distinct('_id')
-    .then(courseIDs => response.redirect(`/properties/${courseIDs[0]}`))
+    .then(propertyIDs => response.redirect(`/properties/${propertyIDs[0]}`))
     .catch(error => next(error));
 };
 
 // GET /courses/:id
 module.exports.retrieve = function(request, response, next) {
   const queries = [
-    Course.findById(request.params.id),
-    Course.distinct('_id')
+    Property.findById(request.params.id),
+    Property.distinct('_id')
   ];
 
-  Promise.all(queries).then(function([course, courseIDs]) {
-    if (course) {
-      response.render('courses/index', {course: course, courseIDs: courseIDs});
+  Promise.all(queries).then(function([property, propertyID]) {
+    if (property) {
+      response.render('properties/index', {property: property, propertyID: propertyID});
     } else {
-      next(); // No such course
+      next(); // No such property
     }
   }).catch(error => next(error));
 };
