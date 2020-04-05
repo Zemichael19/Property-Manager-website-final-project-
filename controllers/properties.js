@@ -1,5 +1,5 @@
 // Controller for the properties collection.
-const Property = require('../models/course');
+const Property = require('../models/property');
 
 // GET /properties
 module.exports.index = function(request, response, next) {
