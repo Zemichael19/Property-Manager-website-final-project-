@@ -1,6 +1,6 @@
 const express = require('express');
-const courses = require('./controllers/properties');
-const sections = require('./controllers/apartments');
+const properties = require('./controllers/properties');
+const apartments = require('./controllers/apartments');
 
 // Create the router
 const router = express.Router();
