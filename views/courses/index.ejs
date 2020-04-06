@@ -2,28 +2,20 @@
 <html>
   <%- include('../head'); -%>
   <body>
-    <%- include('../navbar', {active: 'courses'}); -%>
+    <%- include('../navbar', {active: 'properties'}); -%>
     <div class="container-fluid">
       <div class="row">
         <div class="col-auto p-3 border-right">
           <nav class="nav nav-pills flex-column">
-            <%_ for (const id of courseIDs) { -%>
-              <a href="/courses/<%= id -%>" class="nav-item nav-link <%= id === course.id ? 'active bg-dark' : 'inactive' -%>"><%= id -%></a>
+            <%_ for (const id of propertyIDs) { -%>
+              <a href="/properties/<%= id -%>" class="nav-item nav-link <%= id === property.id ? 'active bg-dark' : 'inactive' -%>"><%= id -%></a>
             <%_ } -%>
           </nav>
         </div>
         <div class="col">
           <main class="p-3">
-            <h2><%= course.title -%></h2>
-            <p><%= course.description -%></p>
-            <%_ if (course.prereqs.length > 0) { -%>
-              <p>Prereqs:</p>
-              <ul>
-                <%_ for (const prereq of course.prereqs) { -%>
-                  <li><a href="/courses/<%= prereq -%>"><%= prereq -%></a></li>
-                <%_ } -%>
-              </ul>
-            <%_ } -%>
+            <h2><%= property.address -%></h2>
+            <p><%= property.n_apart -%></p>
           </main>
         </div>
       </div>
