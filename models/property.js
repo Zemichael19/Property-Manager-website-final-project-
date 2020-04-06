@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 // Define the schema
 const Property = new mongoose.Schema({
   address: String,
-  n_apart: Number,
+  n_apart: Number
 });
 
 // Export the model
