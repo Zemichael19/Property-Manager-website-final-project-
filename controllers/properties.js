@@ -15,9 +15,9 @@ module.exports.retrieve = function(request, response, next) {
     Property.distinct('_id')
   ];
 
-  Promise.all(queries).then(function([property, propertyID]) {
+  Promise.all(queries).then(function([property, propertyIDs]) {
     if (property) {
-      response.render('properties/index', {property: property, propertyID: propertyID});
+      response.render('properties/index', {property: property, propertyIDs: propertyIDs});
     } else {
       next(); // No such property
     }
