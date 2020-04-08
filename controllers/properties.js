@@ -12,12 +12,12 @@ module.exports.index = function(request, response, next) {
 module.exports.retrieve = function(request, response, next) {
   const queries = [
     Property.findById(request.params.id),
-    Property.distinct('_id')
+    Property.find()
   ];
 
-  Promise.all(queries).then(function([property, propertyIDs]) {
+  Promise.all(queries).then(function([property, properties]) {
     if (property) {
-      response.render('properties/index', {property: property, propertyIDs: propertyIDs});
+      response.render('properties/index', {property: property, properties: properties});
     } else {
       next(); // No such property
     }
