@@ -6,9 +6,9 @@ const Apartment = require('./models/apartment');
 // Connect to the database
 connect();
 
-const users = [
-  new User({name: 'Arman', e_mail:'arman.tavana99@gmail.com', number:'3152611565', pass_w:'a123456789'})
-]
+//const users = [
+  //new User({name: 'Arman', e_mail:'arman.tavana99@gmail.com', number:'3152611565', pass_w:'a123456789'})
+//]
 
 const properties = [
   new Property({address:'Manhattan', n_apart:2}),
