@@ -10,7 +10,7 @@ router.get('/properties', properties.index);
 router.get('/properties/:id', properties.retrieve);
 
 // Handle apartment requests
-router.get('/apartments', apartments.index);
+router.get('/properties', properties.index);
 
 // Export the router
 module.exports = router;
