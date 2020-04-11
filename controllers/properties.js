@@ -8,7 +8,7 @@ module.exports.index = function(request, response, next) {
     .catch(error => next(error));
 };
 
-// GET /courses/:id
+// GET /properties/:id
 module.exports.retrieve = function(request, response, next) {
   const queries = [
     Property.findById(request.params.id),
