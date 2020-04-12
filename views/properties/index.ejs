@@ -38,22 +38,22 @@
                   <tr>
                     <td><%= apartment.n_rooms -%></td>
                     <td><%= apartment.n_bathrooms -%></td>
-                    <% const status = (apartment.listed) ? 'Listed' : 'Not Listed' -%>
-                      <td><%= status -%></td>
-                    <% const status = (apartment.furnished) ? 'Furnished' : 'Not Furnished' -%>
-                      <td><%= status -%></td>
+                    <% const status_listing = (apartment.listed) ? 'Listed' : 'Not Listed' -%>
+                      <td><%= status_listing -%></td>
+                    <% const status_furnished = (apartment.furnished) ? 'Furnished' : 'Not Furnished' -%>
+                      <td><%= status_furnished -%></td>
                     <td><%= apartment.floor -%></td>
                     <td><%= apartment.sqFoot -%></td>
-                    <% const status = (apartment.pets) ? 'Allowed' : 'Not Allowed' -%>
-                      <td><%= status -%></td>
-                    <% const status = (apartment.laundry) ? 'Available' : 'Not Available' -%>
-                      <td><%= status -%></td>
-                    <% const status = (apartment.parking) ? 'Available' : 'Not Available' -%>
-                      <td><%= status -%></td>
+                    <% const status_pets = (apartment.pets) ? 'Allowed' : 'Not Allowed' -%>
+                      <td><%= status_pets -%></td>
+                    <% const status_laundry = (apartment.laundry) ? 'Available' : 'Not Available' -%>
+                      <td><%= status_laundry -%></td>
+                    <% const status_parking = (apartment.parking) ? 'Available' : 'Not Available' -%>
+                      <td><%= status_parking -%></td>
                     <td><%= apartment.s_date -%></td>
                     <td><%= apartment.e_date -%></td>
-                    <% const status = (apartment.ac) ? 'Available' : 'Not Available' -%>
-                      <td><%= status -%></td>
+                    <% const status_ac = (apartment.ac) ? 'Available' : 'Not Available' -%>
+                      <td><%= status_ac -%></td>
                     <td><%= apartment.u_num -%></td>
                   </tr>
                 <%_ } -%>
