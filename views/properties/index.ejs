@@ -9,7 +9,7 @@
           <nav class="nav nav-pills flex-column">
             <%_ for (const prop of properties) { -%>
               <% const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
-              <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%> # of apartments: <%= prop.n_apart-%></a>
+              <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%>, # of apartments: <%= prop.n_apart-%></a>
             <%_ } -%>
           </nav>
         </div>
@@ -38,7 +38,8 @@
                   <tr>
                     <td><%= apartment.n_rooms -%></td>
                     <td><%= apartment.n_bathrooms -%></td>
-                    <td><%= apartment.listed -%></td>
+                    <% const status = (apartment.listed) ? 'listed' : 'not listed' -%>
+                      <td><%= apartment.listed -%></td>
                     <td><%= apartment.furnished -%></td>
                     <td><%= apartment.floor -%></td>
                     <td><%= apartment.sqFoot -%></td>
