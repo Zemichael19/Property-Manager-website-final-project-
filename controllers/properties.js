@@ -4,12 +4,7 @@ const Property = require('../models/property');
 // Controller for the section collection.
 const Apartment = require('../models/apartment');
 
-// GET /properties
-module.exports.index = function(request, response, next) {
-  Property.distinct('_id')
-    .then(propertyIDs => response.redirect(`/properties/${propertyIDs[0]}`))
-    .catch(error => next(error));
-};
+
 
 // GET /properties/:id?sort
 module.exports.retrieve = function(request, response, next) {
