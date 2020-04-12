@@ -13,7 +13,7 @@ module.exports.index = function(request, response, next) {
 
 // GET /properties/:id?sort
 module.exports.retrieve = function(request, response, next) {
-  const order = request.query.sort || 'u_num';
+  const order = request.query.sort || 'n_rooms';
   const queries = [
     Property.findById(request.params.id),
     Property.find(),
