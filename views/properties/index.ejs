@@ -38,17 +38,22 @@
                   <tr>
                     <td><%= apartment.n_rooms -%></td>
                     <td><%= apartment.n_bathrooms -%></td>
-                    <% const status = (apartment.listed) ? 'listed' : 'not listed' -%>
+                    <% const status = (apartment.listed) ? 'Listed' : 'Not Listed' -%>
                       <td><%= status -%></td>
-                    <td><%= apartment.furnished -%></td>
+                    <% const status = (apartment.furnished) ? 'Furnished' : 'Not Furnished' -%>
+                      <td><%= status -%></td>
                     <td><%= apartment.floor -%></td>
                     <td><%= apartment.sqFoot -%></td>
-                    <td><%= apartment.pets -%></td>
-                    <td><%= apartment.laundry -%></td>
-                    <td><%= apartment.parking -%></td>
+                    <% const status = (apartment.pets) ? 'Allowed' : 'Not Allowed' -%>
+                      <td><%= status -%></td>
+                    <% const status = (apartment.laundry) ? 'Available' : 'Not Available' -%>
+                      <td><%= status -%></td>
+                    <% const status = (apartment.parking) ? 'Available' : 'Not Available' -%>
+                      <td><%= status -%></td>
                     <td><%= apartment.s_date -%></td>
                     <td><%= apartment.e_date -%></td>
-                    <td><%= apartment.ac -%></td>
+                    <% const status = (apartment.ac) ? 'Available' : 'Not Available' -%>
+                      <td><%= status -%></td>
                     <td><%= apartment.u_num -%></td>
                   </tr>
                 <%_ } -%>
