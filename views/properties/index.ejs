@@ -12,9 +12,19 @@
               <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%>, # of apartments: <%= prop.n_apart-%></a>
             <%_ } -%>
           </nav>
+          <%_ if (admin) { -%>
+            <form id="create" class="form my-1">
+              <input type="text" name="_id" placeholder="Property" size="1" class="form-control">
+            </form>
+          <%_ } -%>
         </div>
         <div class="col">
           <main class="p-3">
+            <%_ if (admin) { -%>
+             <%- include('./edit', {property: property, propertyIDs: propertyIDs}); -%>
+           <%_ } else { -%>
+             <%- include('./browse', {property: property}); -%>
+           <%_ } -%>
             <table class="table">
               <thead>
                 <tr>
@@ -63,5 +73,8 @@
         </div>
       </div>
     </div>
+    <%_ if (admin) { -%>
+     <%- include('./scripts', {property: property}); -%>
+   <%_ } -%>
   </body>
 </html>
