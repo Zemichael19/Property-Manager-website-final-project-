@@ -8,7 +8,7 @@
         <div class="col-auto p-3 border-right">
           <nav class="nav nav-pills flex-column">
             <%_ for (const prop of properties) { -%>
-              <% const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
+              <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
               <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%>, # of apartments: <%= prop.n_apart-%></a>
             <%_ } -%>
           </nav>
@@ -28,19 +28,19 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th class="border-0">Number of rooms</th>
-                  <th class="border-0">Number of bathrooms</th>
-                  <th class="border-0">Listed</th>
-                  <th class="border-0">Furnished</th>
-                  <th class="border-0">Floor</th>
-                  <th class="border-0">Square Footage</th>
-                  <th class="border-0">Pets</th>
-                  <th class="border-0">Laundry</th>
-                  <th class="border-0">Parking</th>
-                  <th class="border-0">Lease start date</th>
-                  <th class="border-0">Lease end date</th>
-                  <th class="border-0">AC</th>
-                  <th class="border-0">Unit Number</th>
+                  <th class="border-0"><a href="/properties/<%= property.id -%>?sort=n_rooms" class="btn <%= (order === 'n_rooms') ? 'btn-dark' : 'btn-primary' -%>">Number of rooms</a></th>
+                  <th class="border-0"><a href="/properties/<%= property.id -%>?sort=n_bathrooms" class="btn <%= (order === 'n_bathrooms') ? 'btn-dark' : 'btn-primary' -%>">Number of bathrooms</a></th>
+                  <th class="border-0"><a href="/properties/<%= property.id -%>?sort=listed" class="btn <%= (order === 'listed') ? 'btn-dark' : 'btn-primary' -%>">Listed</a></th>
+                  <th class="border-0"><a href="/properties/<%= property.id -%>?sort=furnished" class="btn <%= (order === 'furnished') ? 'btn-dark' : 'btn-primary' -%>">Furnished</a></th>
+                  <th class="border-0"><a href="/properties/<%= property.id -%>?sort=floor" class="btn <%= (order === 'floor') ? 'btn-dark' : 'btn-primary' -%>">Floor</a></th>
+                  <th class="border-0"><a href="/properties?sort=sqFoot" class="btn <%= (order === 'sqFoot') ? 'btn-dark' : 'btn-primary' -%>">Square Footage</a></th>
+                  <th class="border-0"><a href="/properties?sort=pets" class="btn <%= (order === 'pets') ? 'btn-dark' : 'btn-primary' -%>">Pets</a></th>
+                  <th class="border-0"><a href="/properties?sort=laundry" class="btn <%= (order === 'laundry') ? 'btn-dark' : 'btn-primary' -%>">Laundry</a></th>
+                  <th class="border-0"><a href="/properties?sort=parking" class="btn <%= (order === 'parking') ? 'btn-dark' : 'btn-primary' -%>">Parking</a></th>
+                  <th class="border-0"><a href="/properties?sort=s_date" class="btn <%= (order === 's_date') ? 'btn-dark' : 'btn-primary' -%>">Lease start date</a></th>
+                  <th class="border-0"><a href="/properties?sort=e_date" class="btn <%= (order === 'e_date') ? 'btn-dark' : 'btn-primary' -%>">Lease end date</a></th>
+                  <th class="border-0"><a href="/properties?sort=ac" class="btn <%= (order === 'ac') ? 'btn-dark' : 'btn-primary' -%>">AC</a></th>
+                  <th class="border-0"><a href="/properties?sort=u_num" class="btn <%= (order === 'u_num') ? 'btn-dark' : 'btn-primary' -%>">Unit Number</a></th>
                 </tr>
                 </thead>
               <tbody>
@@ -48,21 +48,21 @@
                   <tr>
                     <td><%= apartment.n_rooms -%></td>
                     <td><%= apartment.n_bathrooms -%></td>
-                    <% const status_listing = (apartment.listed) ? 'Listed' : 'Not Listed' -%>
+                    <%_ const status_listing = (apartment.listed) ? 'Listed' : 'Not Listed' -%>
                       <td><%= status_listing -%></td>
-                    <% const status_furnished = (apartment.furnished) ? 'Furnished' : 'Not Furnished' -%>
+                    <%_ const status_furnished = (apartment.furnished) ? 'Furnished' : 'Not Furnished' -%>
                       <td><%= status_furnished -%></td>
                     <td><%= apartment.floor -%></td>
                     <td><%= apartment.sqFoot -%></td>
-                    <% const status_pets = (apartment.pets) ? 'Allowed' : 'Not Allowed' -%>
+                    <%_ const status_pets = (apartment.pets) ? 'Allowed' : 'Not Allowed' -%>
                       <td><%= status_pets -%></td>
-                    <% const status_laundry = (apartment.laundry) ? 'Available' : 'Not Available' -%>
+                    <%_ const status_laundry = (apartment.laundry) ? 'Available' : 'Not Available' -%>
                       <td><%= status_laundry -%></td>
-                    <% const status_parking = (apartment.parking) ? 'Available' : 'Not Available' -%>
+                    <%_ const status_parking = (apartment.parking) ? 'Available' : 'Not Available' -%>
                       <td><%= status_parking -%></td>
                     <td><%= apartment.s_date -%></td>
                     <td><%= apartment.e_date -%></td>
-                    <% const status_ac = (apartment.ac) ? 'Available' : 'Not Available' -%>
+                    <%_ const status_ac = (apartment.ac) ? 'Available' : 'Not Available' -%>
                       <td><%= status_ac -%></td>
                     <td><%= apartment.u_num -%></td>
                   </tr>
