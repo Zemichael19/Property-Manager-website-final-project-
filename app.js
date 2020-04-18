@@ -14,8 +14,6 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-// Parse request bodies like query strings
-app.use(express.urlencoded({extended: false}));
 
 
 // Ignore icon requests
@@ -36,23 +34,7 @@ app.get('/', function(request, response) {
   response.redirect('/properties');
 });
 
-// Enter admin mode and return to the previous page
-app.get('/login', function(request, response) {
-  request.session.admin = true;
-  response.redirect('back');
-});
 
-// Exit admin mode and return to the previous page
-app.get('/logout', function(request, response) {
-  request.session.admin = false;
-  response.redirect('back');
-});
-
-// Make the mode available in all views
-app.use(function(request, response, next) {
-  response.locals.admin = request.session.admin;
-  next();
-});
 
 // Route content requests
 app.use('/', router);
