@@ -6,7 +6,6 @@ const apartments = require('./controllers/apartments');
 const router = express.Router();
 
 
-
 // Handle property requests
 router.get('/properties', properties.index);
 router.get('/properties/:id', properties.retrieve);
