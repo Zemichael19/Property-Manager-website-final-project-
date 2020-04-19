@@ -1,5 +1,6 @@
 // Server for a course catalog.
 const express = require('express');
+
 const router = require('./router');
 const connect = require('./db');
 
@@ -12,6 +13,8 @@ const app = express();
 // Configure the views
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
+
 
 // Ignore icon requests
 app.get('/favicon.ico', function(request, response) {
@@ -30,6 +33,8 @@ app.use(function(request, response, next) {
 app.get('/', function(request, response) {
   response.redirect('/properties');
 });
+
+
 
 // Route content requests
 app.use('/', router);

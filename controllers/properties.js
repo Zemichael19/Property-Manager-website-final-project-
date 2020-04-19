@@ -1,7 +1,7 @@
 // Controller for the properties collection.
 const Property = require('../models/property');
 
-// Controller for the section collection.
+// Controller for the apartments collection.
 const Apartment = require('../models/apartment');
 
 // GET /properties

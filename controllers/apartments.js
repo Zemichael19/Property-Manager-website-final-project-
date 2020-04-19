@@ -1,7 +1,7 @@
 // Controller for the section collection.
 const Apartment = require('../models/apartment');
 
-// GET /sections?sort=
+// GET /apartments?sort=
 module.exports.index = function(request, response, next) {
   const order = request.query.sort || 'u_num'; // Default to sort by unit number
 
