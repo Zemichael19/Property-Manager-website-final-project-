@@ -9,7 +9,7 @@
           <nav class="nav nav-pills flex-column">
             <%_ for (const prop of properties) { -%>
               <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
-              <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%>, # of apartments: <%= prop.n_apart-%></a>
+              <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%></a>
             <%_ } -%>
           </nav>
         </div>
