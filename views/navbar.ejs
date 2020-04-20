@@ -7,7 +7,10 @@
   <%_ if (admin) { -%>
     <a href="/logout" class="nav-item nav-link">Logout</a>
   <%_ } else { -%>
-    <input type="text" placeholder = "email" name="text">
+    <div class="md-form form-sm">
+      <input type="text" class="form-control form-control-sm">
+      <label for="inputSMEx">email</label>
+    </div>
     <a href="/login" class="nav-item nav-link">Login</a>
   <%_ } -%>
 </nav>
