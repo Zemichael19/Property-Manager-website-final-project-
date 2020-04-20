@@ -23,9 +23,9 @@ router.get('/logout', function(request, response) {
 router.get('/properties', properties.index);
 router.get('/properties/:id', properties.retrieve);
 
-router.post('/properties', authorize, courses.create);
-router.delete('/properties/:id', authorize, courses.delete);
-router.put('/properties/:id', authorize, courses.update);
+router.post('/properties', authorize, properties.create);
+router.delete('/properties/:id', authorize, properties.delete);
+router.put('/properties/:id', authorize, properties.update);
 
 // Handle apartment requests
 router.get('/apartments', apartments.index);
