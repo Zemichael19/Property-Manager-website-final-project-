@@ -28,7 +28,7 @@ const apartments = [
 
 // Reset the database
 mongoose.connection.dropDatabase()
-  .then(() => Promise.all(users.map(user => users.save())))
+  .then(() => Promise.all(users.map(user => user.save())))
   .then(() => Promise.all(properties.map(property => property.save())))
   .then(() => Promise.all(apartments.map(apartment => apartment.save())))
   .then(() => mongoose.connection.close())
