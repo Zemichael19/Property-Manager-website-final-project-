@@ -38,6 +38,12 @@ app.use(function(request, response, next) {
   next();
 });
 
+// Make user data available in all views
+app.use(function(request, response, next) {
+  response.locals.user = request.session.user;
+  next();
+});
+
 // Make the mode available in all views
 app.use(function(request, response, next) {
   response.locals.admin = request.session.admin;
