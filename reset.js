@@ -13,8 +13,8 @@ const users = [
 ]
 
 const properties = [
-  new Property({user: User[0].id, address:'Manhattan', n_apart:2}),
-  new Property({user: User[1].id, address:'Bronx', n_apart:3}),
+  new Property({user: users[0].id, address:'Manhattan', n_apart:2}),
+  new Property({user: users[1].id, address:'Bronx', n_apart:3}),
 ];
 
 
@@ -28,7 +28,7 @@ const apartments = [
 
 // Reset the database
 mongoose.connection.dropDatabase()
-  .then(() => Promise.all(apartments.map(user => user.save())))
+  .then(() => Promise.all(users.map(user => users.save())))
   .then(() => Promise.all(properties.map(property => property.save())))
   .then(() => Promise.all(apartments.map(apartment => apartment.save())))
   .then(() => mongoose.connection.close())
