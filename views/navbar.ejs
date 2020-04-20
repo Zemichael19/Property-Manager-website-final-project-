@@ -7,10 +7,9 @@
   <%_ if (admin) { -%>
     <a href="/logout" class="nav-item nav-link">Logout</a>
   <%_ } else { -%>
-    <div class="md-form input-with-post-icon">
-      <i class="fas fa-user input-prefix"></i>
-      <input type="text" id="suffixInside" class="form-control">
-      <label for="suffixInside">email address</label>
+    <div class="md-form">
+      <input placeholder="Placeholder" type="text" id="inputPlaceholderEx" class="form-control">
+      <label for="inputPlaceholderEx">email</label>
     </div>
     <a href="/login" class="nav-item nav-link">Login</a>
   <%_ } -%>
