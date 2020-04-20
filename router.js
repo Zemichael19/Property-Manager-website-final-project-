@@ -5,6 +5,15 @@ const users = require('./controllers/users');
 // Create the router
 const router = express.Router();
 
+// Check for admin status
+const authorize = function(request, response, next) {
+  if (request.session.admin) {
+    next(); // Fulfill the request
+  } else {
+    response.status(401).end();
+  }
+};
+
 // Handle home-page requests
 router.get('/', function(request, response) {
   response.render('index');
