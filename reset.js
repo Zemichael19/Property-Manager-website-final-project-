@@ -2,17 +2,19 @@ const mongoose = require('mongoose');
 const connect = require('./db');
 const Property = require('./models/property');
 const Apartment = require('./models/apartment');
+const User = require('./models/user');
 
 // Connect to the database
 connect();
 
-//const users = [
-  //new User({name: 'Arman', e_mail:'arman.tavana99@gmail.com', number:'3152611565', pass_w:'a123456789'})
-//]
+const users = [
+  new User({name: 'Arman', e_mail:'arman.tavana99@gmail.com'})
+  new User({name: 'Mike', e_mail:'Mike@gmail.com'})
+]
 
 const properties = [
-  new Property({address:'Manhattan', n_apart:2}),
-  new Property({address:'Bronx', n_apart:3}),
+  new Property({user: User[0].id, address:'Manhattan', n_apart:2}),
+  new Property({user: User[1].id, address:'Bronx', n_apart:3}),
 ];
 
 
@@ -26,6 +28,7 @@ const apartments = [
 
 // Reset the database
 mongoose.connection.dropDatabase()
+  .then(() => Promise.all(apartments.map(user => user.save())))
   .then(() => Promise.all(properties.map(property => property.save())))
   .then(() => Promise.all(apartments.map(apartment => apartment.save())))
   .then(() => mongoose.connection.close())
