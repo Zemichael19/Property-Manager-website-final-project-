@@ -8,8 +8,8 @@ const Apartment = require('./models/apartment');
 connect();
 
 const users = [
-  new User({name: 'Arman', e_mail:'arman.tavana99@gmail.com'}),
-  new User({name: 'Mike', e_mail:'Mike@gmail.com'})
+  new User({_id: 'arman.tavana99@gmail.com',name: 'Arman', e_mail:'arman.tavana99@gmail.com'}),
+  new User({_id: 'mike@gmail.com',name: 'Mike', e_mail:'mike@gmail.com'})
 ]
 
 const properties = [
