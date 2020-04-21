@@ -16,7 +16,7 @@ module.exports.retrieve = function(request, response, next) {
   const order = request.query.sort || 'n_rooms';
   const queries = [
     Property.findById(request.params.id),
-    Property.find(),
+    Property.find().where("_id").equals(request.session.user.id),
     Apartment.find().where("property").equals(request.params.id).sort(order)
   ];
 
