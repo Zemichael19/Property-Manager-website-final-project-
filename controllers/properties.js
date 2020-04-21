@@ -6,6 +6,7 @@ const Apartment = require('../models/apartment');
 
 // GET /properties
 module.exports.index = function(request, response, next) {
+  console.log(request.session.user.id);
   Property.find().where('user').equals(request.session.user.id)
     .then(properties => response.redirect(`/properties/${properties[0].id}`))
     .catch(error => next(error));
