@@ -6,8 +6,8 @@ const Apartment = require('../models/apartment');
 
 // GET /properties
 module.exports.index = function(request, response, next) {
-  Property.distinct('_id')
-    .then(propertyIDs => response.redirect(`/properties/${propertyIDs[0]}`))
+  Property.find().where('user').equals(request.session.user.id)
+    .then(properties => response.redirect(`/properties/${properties[0].id}`))
     .catch(error => next(error));
 };
 
@@ -16,7 +16,7 @@ module.exports.retrieve = function(request, response, next) {
   const order = request.query.sort || 'n_rooms';
   const queries = [
     Property.findById(request.params.id),
-    Property.find().where("_id").equals(request.session.user.id),
+    Property.find().where('user').equals(request.session.user.id),
     Apartment.find().where("property").equals(request.params.id).sort(order)
   ];
 
