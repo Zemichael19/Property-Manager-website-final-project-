@@ -15,7 +15,7 @@
           const form = $(this);
           event.preventDefault();
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
-            .done(() => window.location.redirect('/properties'))
+            .done(() => window.location.replace('/properties'))
             .fail(error => alert('Could not log in.'));
         })
       </script>
