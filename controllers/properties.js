@@ -14,7 +14,7 @@ module.exports.index = function(request, response, next) {
 
 // GET /properties/:id?sort
 module.exports.retrieve = function(request, response, next) {
-  const order = request.query.sort || 'n_rooms';
+  const order = request.query.sort;
   const queries = [
     Property.findById(request.params.id),
     Property.find().where('user').equals(request.session.user._id),
