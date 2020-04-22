@@ -50,8 +50,8 @@
                       <td><%= status_laundry -%></td>
                     <%_ const status_parking = (apartment.parking) ? 'Yes' : 'No' -%>
                       <td><%= status_parking -%></td>
-                    <td><%= apartment.s_date -%></td>
-                    <td><%= apartment.e_date -%></td>
+                    <td><%= apartment.s_date.getDate() -%></td>
+                    <td><%= apartment.e_date.getDate() -%></td>
                     <%_ const status_ac = (apartment.ac) ? 'Yes' : 'No' -%>
                       <td><%= status_ac -%></td>
                     <td><%= apartment.u_num -%></td>
