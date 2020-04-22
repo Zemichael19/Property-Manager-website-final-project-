@@ -13,9 +13,9 @@ const users = [
 ]
 
 const properties = [
-  new Property({user: 'arman.tavana99@gmail.com', address:'Manhattan'),
-  new Property({user: 'arman.tavana99@gmail.com', address:'Hobokan'),
-  new Property({user: 'mike@gmail.com', address:'Bronx')
+  new Property({user: 'arman.tavana99@gmail.com', address:'Manhattan'}),
+  new Property({user: 'arman.tavana99@gmail.com', address:'Hobokan'}),
+  new Property({user: 'mike@gmail.com', address:'Bronx'})
 ];
 
 
