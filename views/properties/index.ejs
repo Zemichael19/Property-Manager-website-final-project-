@@ -51,8 +51,13 @@
                       <td><%= status_laundry -%></td>
                     <%_ const status_parking = (apartment.parking) ? 'Yes' : 'No' -%>
                       <td><%= status_parking -%></td>
-                    <td><%= apartment.s_date.toDateString() -%></td>
-                    <td><%= apartment.e_date.toDateString() -%></td>
+                    <%_ if (!apartment.listed) { -%>
+                      <td><%= apartment.s_date.toDateString() -%></td>
+                      <td><%= apartment.e_date.toDateString() -%></td>
+                    <%_} else{-%>
+                      <td><%= ---- -%></td>
+                      <td><%= ---- -%></td>
+                    <%_}-%>
                     <%_ const status_ac = (apartment.ac) ? 'Yes' : 'No' -%>
                       <td><%= status_ac -%></td>
                   </tr>
