@@ -28,6 +28,8 @@ router.get('/logout', function(request, response) {
   response.redirect('/');
 });
 
+router.get('/properties/new', properties.new);
+
 // Handle property requests
 router.get('/properties', properties.index);
 router.get('/properties/:id', properties.retrieve);

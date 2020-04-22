@@ -37,6 +37,10 @@ module.exports.create = function(request, response, next) {
     .catch(error => next(error));
 };
 
+module.exports.new = function(request, response) {
+  response.render('properties/index');
+};
+
 // DELETE /properties/:id
 module.exports.delete = function(request, response, next) {
   Property.findByIdAndDelete(request.params.id)
