@@ -12,6 +12,9 @@
               <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%></a>
             <%_ } -%>
           </nav>
+          <form id="create" class="form my-1">
+              <input type="text" name="_id" placeholder="New Property" size="1" class="form-control">
+          </form>
         </div>
         <div class="col">
           <main class="p-3">
@@ -51,7 +54,7 @@
                     <%_ const status_pets = (apartment.pets) ? 'Yes' : 'No' -%>
                       <td><%= status_pets -%></td>
                     <%_ const status_parking = (apartment.parking) ? 'Yes' : 'No' -%>
-                      <td><%= status_parking -%></td>        
+                      <td><%= status_parking -%></td>
                     <%_ const status_listing = (apartment.listed) ? 'Yes' : 'No' -%>
                       <td><%= status_listing -%></td>
                     <td><%= apartment.s_date.toDateString() -%></td>
@@ -61,6 +64,7 @@
                 <%_ } -%>
               </tbody>
             </table>
+            <%- include('./edit', {course: course, courseIDs: courseIDs}); -%>
           </main>
         </div>
       </div>
