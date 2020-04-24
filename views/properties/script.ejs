@@ -5,8 +5,8 @@
   $('#create').on('submit', function(event) {
     const form = $(this);
     event.preventDefault();
-    $.ajax({method: 'post', url: '/courses', data: form.serialize()})
-      .done(id => window.location.replace(`/courses/${id}`))
+    $.ajax({method: 'post', url: '/properties', data: form.serialize()})
+      .done(id => window.location.replace(`/properties/${id}`))
       .fail(error => alert(error.responseText));
   });
 
@@ -14,15 +14,15 @@
   $('#update').on('submit', function(event) {
     const form = $(this);
     event.preventDefault();
-    $.ajax({method: 'put', url: '/courses/<%= course.id -%>', data: form.serialize()})
+    $.ajax({method: 'put', url: '/properties/<%= property.id -%>', data: form.serialize()})
       .fail(error => alert(error.responseText));
   });
 
   // Delete a course
   $('#delete').on('click', function(event) {
     event.preventDefault();
-    $.ajax({method: 'delete', url: '/courses/<%= course.id -%>'})
-      .done(() => window.location.replace('/courses'))
+    $.ajax({method: 'delete', url: '/properties/<%= property.id -%>'})
+      .done(() => window.location.replace('/properties'))
       .fail(error => alert(error.responseText));
   });
 </script>
