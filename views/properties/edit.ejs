@@ -1,18 +1,10 @@
 
-<!DOCTYPE html>
-<html>
-  <%- include('../head'); -%>
-  <body>
-    <%- include('../navbar', {active: 'properties'}); -%>
-    <div class="container-fluid">
-      <div class="row">
-        <form id="update" class="form">
-          <input type="text" name="title" placeholder="Title" value="<%= property.title -%>" class="form-control form-control-lg font-weight-bold mb-1">
-          <textarea name="location" placeholder="Location" rows="3" class="form-control mb-1"><%= property.location -%></textarea>
-          <button class="btn btn-primary">Save</button>
-          <button id="delete" class="btn btn-primary">Delete</button>
-        </form>
-      </div>
-    </div>
-  </body>
-</html>
+
+<form id="update" class="form">
+  <input type="text" name="title" placeholder="Title" value="<%= property.title -%>" class="form-control form-control-lg font-weight-bold mb-1">
+  <textarea name="location" placeholder="Location" rows="3" class="form-control mb-1"><%= property.location -%></textarea>
+
+
+  <button class="btn btn-primary">Save</button>
+  <button id="delete" class="btn btn-primary">Delete</button>
+</form>
