@@ -21,7 +21,7 @@ const properties = [
 
 const apartments = [
   new Apartment({property: properties[0].id, n_rooms: 3, n_bathrooms: 2,listed: false, furnished:true, floor: 4,sqFoot:1400,pets: true,laundry: false,parking: true,s_date: 'June 2018' ,e_date: 'June 2021',ac: false,u_num: 410}),
-  new Apartment({property: properties[0].id, n_rooms: 2, n_bathrooms: 1,listed: true, furnished:true, floor: 2,sqFoot:2300,pets: false,laundry: true,parking: false,ac: true,u_num: 209}),
+  new Apartment({property: properties[0].id, n_rooms: 2, n_bathrooms: 1,listed: true, furnished:true, floor: 2,sqFoot:2300,pets: false,laundry: true,parking: false,s_date: 'January 2017' ,e_date: 'January 2020',ac: true,u_num: 209}),
   new Apartment({property: properties[1].id, n_rooms: 6, n_bathrooms: 5,listed: true, furnished:false, floor: 8,sqFoot:5500,pets: true,laundry: false,parking: true,s_date: 'October 2019' ,e_date: 'April 2020',ac: false,u_num: 806}),
   new Apartment({property: properties[1].id, n_rooms: 3, n_bathrooms: 2,listed: false, furnished:false, floor: 2,sqFoot:1600,pets: true,laundry: true,parking: true,s_date: 'May 2018' ,e_date: 'May 2021',ac: true,u_num: 201}),
   new Apartment({property: properties[1].id, n_rooms: 2, n_bathrooms: 3,listed: false, furnished:true, floor: 5,sqFoot:1500,pets: true,laundry: false,parking: false,s_date: 'July 2019' ,e_date: 'July 2022',ac: false,u_num: 510}),
