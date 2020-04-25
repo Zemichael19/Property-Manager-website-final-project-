@@ -25,12 +25,12 @@ router.get('/logout', function(request, response) {
   response.redirect('/');
 });
 
-router.get('/properties/new', properties.new);
+
 
 // Handle property requests
 router.get('/properties', properties.index);
 router.get('/properties/:id', properties.retrieve);
-
+router.get('/properties/new', properties.new);
 router.post('/properties', authorize, properties.create);
 router.delete('/properties/:id', authorize, properties.delete);
 router.put('/properties/:id', authorize, properties.update);
