@@ -16,6 +16,7 @@
         </div>
         <div class="col">
           <main class="p-3">
+            <%- include('./edit', {property: property, properties: properties}); -%>
             <table class="table">
               <thead>
                 <tr>
@@ -55,8 +56,8 @@
                       <td><%= status_parking -%></td>
                     <%_ const status_listing = (apartment.listed) ? 'Yes' : 'No' -%>
                       <td><%= status_listing -%></td>
-                    <td><%= apartment.s_date.toDateString().slice(4,apartment.s_date.toDateString().lenght)-%></td>
-                    <td><%= apartment.e_date.toDateString().slice(4,apartment.s_date.toDateString().lenght)-%></td>
+                    <td><%= apartment.s_date.toDateString() -%></td>
+                    <td><%= apartment.e_date.toDateString() -%></td>
 
                   </tr>
                 <%_ } -%>
@@ -66,7 +67,7 @@
           </main>
         </div>
       </div>
-
+      <%- include('./scripts', {course: course}); -%>
     </div>
 
   </body>
