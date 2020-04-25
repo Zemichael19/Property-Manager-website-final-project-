@@ -55,8 +55,8 @@
                       <td><%= status_parking -%></td>
                     <%_ const status_listing = (apartment.listed) ? 'Yes' : 'No' -%>
                       <td><%= status_listing -%></td>
-                    <td><%= apartment.s_date.toDateString() -%></td>
-                    <td><%= apartment.e_date.toDateString() -%></td>
+                    <td><%= apartment.s_date.toDateString().slice(4,str.lenght)-%></td>
+                    <td><%= apartment.e_date.toDateString().slice(4,str.lenght)-%></td>
 
                   </tr>
                 <%_ } -%>
