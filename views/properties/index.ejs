@@ -12,7 +12,9 @@
               <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%></a>
             <%_ } -%>
           </nav>
-
+          <form id="create" class="form my-1">
+             <input type="text" name="_id" placeholder="New Property" size="1" class="form-control">
+           </form>
         </div>
         <div class="col">
           <main class="p-3">
