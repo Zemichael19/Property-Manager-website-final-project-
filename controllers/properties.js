@@ -38,7 +38,7 @@ module.exports.create = function(request, response, next) {
 };
 
 module.exports.new = function(request, response) {
-  response.render('properties/new');
+  response.render('properties/index');
 };
 
 // DELETE /properties/:id
