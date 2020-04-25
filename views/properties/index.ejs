@@ -6,12 +6,12 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-auto p-3 border-right">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <nav class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <%_ for (const prop of properties) { -%>
               <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
               <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%></a>
             <%_ } -%>
-          </div>
+          </nav>
 
         </div>
         <div class="col">
