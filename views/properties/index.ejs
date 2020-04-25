@@ -21,7 +21,10 @@
     <a class="nav-link" href="#">Link</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
+    <%_ for (const prop of properties) { -%>
+      <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
+      <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%></a>
+    <%_ } -%>
   </li>
 </ul>
     <div class="container-fluid">
