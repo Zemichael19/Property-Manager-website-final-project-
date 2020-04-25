@@ -12,7 +12,7 @@
               <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%></a>
             <%_ } -%>
           </nav>
-      
+
         </div>
         <div class="col">
           <main class="p-3">
@@ -62,11 +62,11 @@
                 <%_ } -%>
               </tbody>
             </table>
-            <%- include('./edit', {property: property, properties: properties}); -%>
+
           </main>
         </div>
       </div>
     </div>
-     <%- include('./script', {property: property}); -%>
+    
   </body>
 </html>
