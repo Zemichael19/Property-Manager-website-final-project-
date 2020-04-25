@@ -20,12 +20,12 @@
   <li class="nav-item">
     <a class="nav-link" href="#">Link</a>
   </li>
-  <li class="nav-item">
     <%_ for (const prop of properties) { -%>
       <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
+    <li class="nav-item">
       <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%></a>
+    </li>
     <%_ } -%>
-  </li>
 </ul>
     <div class="container-fluid">
       <div class="row">
