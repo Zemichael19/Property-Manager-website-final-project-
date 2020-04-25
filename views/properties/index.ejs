@@ -4,39 +4,15 @@
   <body>
     <%- include('../navbar', {active: 'properties'}); -%>
     <ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
-    </div>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
     <%_ for (const prop of properties) { -%>
       <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
     <li class="nav-item">
       <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%></a>
     </li>
     <%_ } -%>
-</ul>
+  </ul>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-auto p-3 border-right">
-          <nav class="nav nav-pills flex-column">
-            <%_ for (const prop of properties) { -%>
-              <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
-              <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%></a>
-            <%_ } -%>
-          </nav>
-
         </div>
         <div class="col">
           <main class="p-3">
