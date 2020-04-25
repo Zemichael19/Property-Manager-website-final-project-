@@ -5,12 +5,22 @@
     <%- include('../navbar', {active: 'properties'}); -%>
     <div class="container-fluid">
       <div class="row">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="col-auto p-3 border-right">
+          <nav class="nav nav-pills flex-column">
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
             <%_ for (const prop of properties) { -%>
               <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
               <a href="/properties/<%= prop.id -%>" class="nav-item nav-link <%= status -%>"><%= prop.address-%></a>
             <%_ } -%>
-          </div>
+          </nav>
+
+        </div>
         <div class="col">
           <main class="p-3">
             <table class="table">
