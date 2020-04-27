@@ -68,6 +68,24 @@
         </div>
       </div>
     </div>
-    <%- include('./scripts', {property: property}); -%>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+
+      // Update a course
+      $('#update').on('submit', function(event) {
+        const form = $(this);
+        event.preventDefault();
+        $.ajax({method: 'put', url: '/properties/<%= property.id -%>', data: form.serialize()})
+          .fail(error => alert(error.responseText));
+      });
+
+      // Delete a course
+      $('#delete').on('click', function(event) {
+        event.preventDefault();
+        $.ajax({method: 'delete', url: '/properties/<%= property.id -%>'})
+          .done(() => window.location.replace('/properties'))
+          .fail(error => alert(error.responseText));
+      });
+    </script>
   </body>
 </html>
