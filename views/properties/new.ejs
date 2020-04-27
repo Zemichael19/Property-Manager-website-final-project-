@@ -22,6 +22,17 @@
       </form>
 <!-- Default form contact -->
     </div>
-    <%- include('./scripts'); -%>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+
+      // Create a course
+      $('#create').on('submit', function(event) {
+        const form = $(this);
+        event.preventDefault();
+        $.ajax({method: 'post', url: '/properties', data: form.serialize()})
+          .done(id => window.location.replace(`/properties/${id}`))
+          .fail(error => alert(error.responseText));
+      });
+    </script>
   </body>
 </html>
