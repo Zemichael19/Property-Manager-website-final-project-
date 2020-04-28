@@ -9,7 +9,7 @@ module.exports.new = function(request, response, next)
   Property.findById(request.params.id)];
   Promise.all(queries).then(function([property, properties]) {
     if (property) {
-      response.render('apartments/new', {properties: properties});
+      response.render('apartments/new', {property: property, properties: properties});
     } else {
       next(); // No such property
     }
