@@ -9,7 +9,7 @@
 
         <p class="h4 mb-4">Add an apartment</p>
         <%_ for (const prop of properties) { -%>
-          <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
+      
         <li class="nav-item">
           <a href="/properties/<%= prop.id -%>" class="nav-item nav-link text-info <%= status -%>"><%= prop.name-%></a>
         </li>
