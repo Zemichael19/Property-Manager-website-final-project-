@@ -7,7 +7,7 @@
       <!-- Default form contact -->
       <form class="text-center border border-light p-5" id="create">
 
-        <p class="h4 mb-4">Create a Property</p>
+        <p class="h4 mb-4">Create an apartment</p>
 
         <input type="text" name="user" class="form-control mb-4" value="<%=user._id-%>" >
         <!-- Name -->
@@ -29,8 +29,8 @@
         console.log("hello2");
         const form = $(this);
         event.preventDefault();
-        $.ajax({method: 'post', url: '/properties', data: form.serialize()})
-          .done(id => window.location.replace(`/properties/${id}`))
+        $.ajax({method: 'post', url: '/apartments', data: form.serialize()})
+          .done(id => window.location.replace(`/apartments`))
           .fail(error => alert(error.responseText));
       });
     </script>

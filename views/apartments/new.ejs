@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../head'); -%>
+  <body>
+    <%- include('../navbar'); -%>
+    <div class="container-fluid">
+      <!-- Default form contact -->
+      <form class="text-center border border-light p-5" id="create">
+
+        <p class="h4 mb-4">Create an Apartment</p>
+        <!-- Property id -->
+        <input type="text" name="property" class="form-control mb-4" value="<propid>" >
+        <!-- Number of rooms -->
+        <input type="text" name="numberofrooms" class="form-control mb-4" placeholder="n_rooms">
+        <!-- Number of bathrooms -->
+        <input type="text" name="address" class="form-control mb-4" placeholder="n_bathrooms">
+        <!-- Listed -->
+        <input type="checkbox" name="address" class="form-control mb-4" placeholder="listed">
+        <!-- furnished -->
+        <input type="checkbox" name="address" class="form-control mb-4" placeholder="furnished">
+        <!-- Floor num -->
+        <input type="text" name="address" class="form-control mb-4" placeholder="floor">
+        <!-- Square footage -->
+        <input type="text" name="address" class="form-control mb-4" placeholder="sqFoot">
+        <!-- Pets allowed -->
+        <input type="checkbox" name="address" class="form-control mb-4" placeholder="pets">
+        <!-- Laundry avalible -->
+        <input type="checkbox" name="address" class="form-control mb-4" placeholder="laundry">
+        <!-- parking avalible -->
+        <input type="checkbox" name="address" class="form-control mb-4" placeholder="parking">
+        <!-- start date -->
+        <input type="text" name="address" class="form-control mb-4" placeholder="s_date">
+        <!-- end date -->
+        <input type="text" name="address" class="form-control mb-4" placeholder="e_date">
+        <!-- ac available -->
+        <input type="checkbox" name="address" class="form-control mb-4" placeholder="ac">
+        <!-- Unit num -->
+        <input type="text" name="address" class="form-control mb-4" placeholder="u_num">
+
+        <!-- submit button -->
+        <button class="btn btn-info btn-block" type="submit">Submit</button>
+      </form>
+<!-- Default form contact -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      // Create a course
+      $('#create').on('submit', function(event) {
+        console.log("hello2");
+        const form = $(this);
+        event.preventDefault();
+        $.ajax({method: 'post', url: '/apartments', data: form.serialize()})
+          .done(id => window.location.replace(`apartments`))
+          .fail(error => alert(error.responseText));
+      });
+    </script>
+  </body>
+</html>
