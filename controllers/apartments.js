@@ -9,6 +9,6 @@ module.exports.new = function(request, response, next)
 // POST /apartments
 module.exports.create = function(request, response, next) {
   Apartment.create(request.body)
-    .then(apartment => response.status(201).send(apartment))
+    .then(apartment => response.status(201).send(property.id))
     .catch(error => next(error));
 };
