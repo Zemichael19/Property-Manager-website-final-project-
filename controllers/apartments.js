@@ -13,7 +13,11 @@ module.exports.create = function(request, response, next) {
     .then(apartment => response.status(201).send(apartment))
     .catch(error => next(error));
 };
-// DELETE /properties/:id
+// DELETE apartmnet
+module.exports.delete = function(request, response, next)
+{
+  response.render('apartments/delete');
+}
 module.exports.delete = function(request, response, next) {
   Apartment.findByIdAndDelete(request.apartment.u_num)
     .then(apartment => apartment ? response.status(200).end() : next())
