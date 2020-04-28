@@ -2,11 +2,11 @@
 const Apartment = require('../models/apartment');
 const Property = require('../models/property');
 
+
 module.exports.new = function(request, response, next)
 {
   //send list of all the properties
-  const queries = [Property.find().where('user').equals(request.session.user._id),
-  Property.findById(request.params.id)];
+  const queries = [Property.findById(request.params.id),Property.find().where('user').equals(request.session.user._id)];
   Promise.all(queries).then(function([property, properties]) {
     if (property) {
       response.render('apartments/new', {property: property, properties: properties});
@@ -15,7 +15,6 @@ module.exports.new = function(request, response, next)
     }
   }).catch(error => next(error));
 }
-
 // POST /apartments
 module.exports.create = function(request, response, next) {
   Apartment.create(request.body)
