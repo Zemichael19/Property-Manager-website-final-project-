@@ -36,5 +36,8 @@ router.put('/properties/:id', authorize, properties.update);
 
 // Handle apartment requests
 router.get('/apartments/new', apartments.new);
+router.post('/apartments', authorize, apartments.create);
+//send the post through ajax
+//send the request throug the router to submit the new apparmtnet
 // Export the router
 module.exports = router;
