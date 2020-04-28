@@ -56,7 +56,7 @@
         console.log("hello3");
         const form = $(this);
         event.preventDefault();
-        $.ajax({method: 'post', url: '/properties', data: form.serialize()})
+        $.ajax({method: 'post', url: '/properties/propertname', data: form.serialize()})
           .done(id => window.location.replace(`/properties/${id}`))
           .fail(error => alert(error.responseText));
       });
