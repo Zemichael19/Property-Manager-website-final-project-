@@ -12,3 +12,9 @@ module.exports.create = function(request, response, next) {
     .then(apartment => response.status(201).send(property.id))
     .catch(error => next(error));
 };
+// DELETE /properties/:id
+module.exports.delete = function(request, response, next) {
+  Apartment.findByIdAndDelete(request.apartment.u_num)
+    .then(apartment => apartment ? response.status(200).end() : next())
+    .catch(error => next(error));
+};
