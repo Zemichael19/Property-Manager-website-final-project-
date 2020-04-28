@@ -8,9 +8,17 @@
       <form class="text-center border border-light p-5" id="addapp">
 
         <p class="h4 mb-4">Add an apartment</p>
+        <%_ for (const prop of properties) { -%>
+          <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
+        <li class="nav-item">
+          <a href="/properties/<%= prop.id -%>" class="nav-item nav-link text-info <%= status -%>"><%= prop.name-%></a>
+        </li>
+        <%_ } -%>
         <!--<input type="text" name="property" class="form-control mb-4" value="<propid>" >-->
         <!-- Number of rooms -->
+        
         <input type="text" name="property" class="form-control mb-4" placeholder="Name of property">
+
         <input type="text" name="n_rooms" class="form-control mb-4" placeholder="Number of Rooms">
         <!-- Number of bathrooms -->
         <input type="text" name="n_bathrooms" class="form-control mb-4" placeholder="Number of bathrooms">

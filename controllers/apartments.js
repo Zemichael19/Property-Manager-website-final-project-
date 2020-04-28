@@ -5,6 +5,7 @@ const Apartment = require('../models/apartment');
 module.exports.new = function(request, response, next)
 {
   //send list of all the properties
+  Property.find().where('user').equals(request.session.user._id)
   response.render('apartments/new');
 }
 
