@@ -6,9 +6,6 @@ module.exports.new = function(request, response, next)
 {
   response.render('apartments/new');
 }
-module.exports.delete = function(request, response) {
-  response.render('apartments/delete');
-};
 // POST /apartments
 module.exports.create = function(request, response, next) {
   Apartment.create(request.body)
