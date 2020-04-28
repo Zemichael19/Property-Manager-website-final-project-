@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../head'); -%>
+  <body>
+    <%- include('../navbar'); -%>
+    <div class="container-fluid">
+      <!-- Default form contact -->
+      <form class="text-center border border-light p-5" id="deleteapp">
+
+        <p class="h4 mb-4">Delete an apartment</p>
+        <!-- choose the unit number to delete -->
+        <input type="text" name="unitnum" class="form-control mb-4" placeholder="Unit Number" >
+
+        <!-- submit button -->
+        <button class="btn btn-info btn-block" type="submit">Submit</button>
+
+      </form>
+<!-- Default form contact -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      //delete an apartment
+      $('#deleteapp').on('click', function(event) {
+        event.preventDefault();
+        $.ajax({method: 'delete', url: '/properties/<%= property.id -%>/<%= apartment.u_num -%>'})
+          .done(() => window.location.replace('/properties/<%= property.id -%>'))
+          .fail(error => alert(error.responseText));
+      });
+    </script>
+  </body>
+</html>
