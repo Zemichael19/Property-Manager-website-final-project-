@@ -7,7 +7,7 @@ module.exports.new = function(request, response, next)
   //send list of all the properties
   const queries = [Property.find().where('user').equals(request.session.user._id),
   Property.findById(request.params.id)];
-  Promise.all(queries).then(function([properties]) {
+  Promise.all(queries).then(function([property, properties]) {
     if (property) {
       response.render('apartments/new', {properties: properties});
     } else {
