@@ -1,6 +1,6 @@
 // Controller for the section collection.
 const Apartment = require('../models/apartment');
-
+const Property = require('../models/property');
 
 module.exports.new = function(request, response, next)
 {
