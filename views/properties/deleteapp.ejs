@@ -22,7 +22,7 @@
       //delete an apartment
       $('#deleteapp').on('click', function(event) {
         event.preventDefault();
-        $.ajax({method: 'delete', url: '/properties/<%= property.id -%>/<%= apartment.u_num -%>'})
+        $.ajax({method: 'delete', url: '/properties'})
           .done(() => window.location.replace('/properties/<%= property.id -%>'))
           .fail(error => alert(error.responseText));
       });

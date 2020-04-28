@@ -49,8 +49,8 @@
         console.log("hello3");
         const form = $(this);
         event.preventDefault();
-        $.ajax({method: 'post', url: '/properties/<%= property.id -%>', data: form.serialize()})
-          .done(id => window.location.replace(`/properties/<%= property.id -%>`))
+        $.ajax({method: 'post', url: '/properties', data: form.serialize()})
+          .done(id => window.location.replace(`/properties/${id}`))
           .fail(error => alert(error.responseText));
       });
     </script>
