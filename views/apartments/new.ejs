@@ -49,7 +49,7 @@
         console.log("hello2");
         const form = $(this);
         event.preventDefault();
-        $.ajax({method: 'post', url: '/apartments', data: form.serialize()})
+        $.ajax({method: 'post', url: '/properties/<%= prop.id -%>/apartments', data: form.serialize()})
           .done(id => window.location.replace(`apartments`))
           .fail(error => alert(error.responseText));
       });

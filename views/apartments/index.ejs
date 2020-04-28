@@ -50,14 +50,14 @@
       $('#update').on('submit', function(event) {
         const form = $(this);
         event.preventDefault();
-        $.ajax({method: 'put', url: '/properties/<%= property.id -%>/apartment', data: form.serialize()})
+        $.ajax({method: 'put', url: '/apartment', data: form.serialize()})
           .fail(error => alert(error.responseText));
       });
 
       // Delete a course
       $('#delete').on('click', function(event) {
         event.preventDefault();
-        $.ajax({method: 'delete', url: '/properties/<%= property.id -%>/apartment'})
+        $.ajax({method: 'delete', url: 'apartment'})
           .done(() => window.location.replace('apartments'))
           .fail(error => alert(error.responseText));
       });
