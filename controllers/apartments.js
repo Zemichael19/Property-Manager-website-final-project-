@@ -4,6 +4,7 @@ const Apartment = require('../models/apartment');
 
 module.exports.new = function(request, response, next)
 {
+  //send list of all the properties
   response.render('apartments/new');
 }
 
