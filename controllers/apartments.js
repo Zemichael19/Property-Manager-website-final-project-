@@ -14,7 +14,7 @@ module.exports.create = function(request, response, next) {
     .catch(error => next(error));
 };
 // DELETE apartmnet
-module.exports.delete = function(request, response, next)
+module.exports.remove = function(request, response, next)
 {
   response.render('apartments/remove');
 }
