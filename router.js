@@ -35,8 +35,6 @@ router.delete('/properties/:id', authorize, properties.delete);
 router.put('/properties/:id', authorize, properties.update);
 
 // Handle apartment requests
-router.get('/apartments', apartments.index);
-
-
+router.get('/apartments/new', apartments.new);
 // Export the router
 module.exports = router;
