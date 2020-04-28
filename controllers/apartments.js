@@ -7,6 +7,13 @@ module.exports.new = function(request, response, next)
   //send list of all the properties
   Property.find().where('user').equals(request.session.user._id)
   response.render('apartments/new');
+  Promise.all(queries).then(function([property, properties, apartments]) {
+    if (property) {
+      response.render('apartments/new', {properties: properties});
+    } else {
+      next(); // No such property
+    }
+  }).catch(error => next(error));
 }
 
 // POST /apartments
