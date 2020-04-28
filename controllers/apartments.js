@@ -5,9 +5,8 @@ const Property = require('../models/property');
 module.exports.new = function(request, response, next)
 {
   //send list of all the properties
-  Property.find().where('user').equals(request.session.user._id)
-  response.render('apartments/new');
-  Promise.all(queries).then(function([property, properties, apartments]) {
+  const queries = [Property.find().where('user').equals(request.session.user._id)];
+  Promise.all(queries).then(function([properties]) {
     if (property) {
       response.render('apartments/new', {properties: properties});
     } else {
