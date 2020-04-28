@@ -10,38 +10,38 @@
         <p class="h4 mb-4">Add an apartment</p>
         <!--<input type="text" name="property" class="form-control mb-4" value="<propid>" >-->
         <!-- Number of rooms -->
-        <input type="text" name="propertname" class="form-control mb-4" placeholder="Name of property">
-        <input type="text" name="numberofrooms" class="form-control mb-4" placeholder="Number of Rooms">
+        <input type="text" name="property" class="form-control mb-4" placeholder="Name of property">
+        <input type="text" name="n_rooms" class="form-control mb-4" placeholder="Number of Rooms">
         <!-- Number of bathrooms -->
-        <input type="text" name="num_b" class="form-control mb-4" placeholder="Number of bathrooms">
+        <input type="text" name="n_bathrooms" class="form-control mb-4" placeholder="Number of bathrooms">
         <!-- Listed -->
         Listed
-        <input type="checkbox" name="listd" class="form-control mb-4" placeholder="Listed">
+        <input type="checkbox" name="listed" class="form-control mb-4" placeholder="Listed">
         Furnished
         <!-- furnished -->
-        <input type="checkbox" name="furnishd" class="form-control mb-4" placeholder="Furnished">
+        <input type="checkbox" name="furnished" class="form-control mb-4" placeholder="Furnished">
         <!-- Floor num -->
-        <input type="text" name="flnum" class="form-control mb-4" placeholder="Floor number">
+        <input type="text" name="floor" class="form-control mb-4" placeholder="Floor number">
         <!-- Square footage -->
-        <input type="text" name="sqfoot" class="form-control mb-4" placeholder="Square Footage">
+        <input type="text" name="sqFoot" class="form-control mb-4" placeholder="Square Footage">
         <!-- Pets allowed -->
         Pets allowed
-        <input type="checkbox" name="pts" class="form-control mb-4" placeholder="Pets">
+        <input type="checkbox" name="pets" class="form-control mb-4" placeholder="Pets">
         <!-- Laundry avalible -->
         Laundry avalible
-        <input type="checkbox" name="lndry" class="form-control mb-4" placeholder="Laundry">
+        <input type="checkbox" name="laundry" class="form-control mb-4" placeholder="Laundry">
         <!-- parking avalible -->
         Parking avalible
-        <input type="checkbox" name="prking" class="form-control mb-4" placeholder="Parking">
+        <input type="checkbox" name="parking" class="form-control mb-4" placeholder="Parking">
         <!-- start date -->
-        <input type="text" name="stdate" class="form-control mb-4" placeholder="Start date">
+        <input type="text" name="s_date" class="form-control mb-4" placeholder="Start date">
         <!-- end date -->
-        <input type="text" name="edate" class="form-control mb-4" placeholder="End date">
+        <input type="text" name="e_date" class="form-control mb-4" placeholder="End date">
         <!-- ac available -->
         AC available
         <input type="checkbox" name="ac" class="form-control mb-4" placeholder="AC">
         <!-- Unit num -->
-        <input type="text" name="unum" class="form-control mb-4" placeholder="Unit num">
+        <input type="text" name="u_num" class="form-control mb-4" placeholder="Unit num">
 
         <!-- submit button -->
         <button class="btn btn-info btn-block" type="submit">Submit</button>
@@ -56,7 +56,7 @@
         console.log("hello3");
         const form = $(this);
         event.preventDefault();
-        $.ajax({method: 'post', url: '/properties/${id}', data: form.serialize()})
+        $.ajax({method: 'post', url: '/apartments', data: form.serialize()})
           .done(id => window.location.replace(`/properties/${id}`))
           .fail(error => alert(error.responseText));
       });
