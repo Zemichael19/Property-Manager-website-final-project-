@@ -16,7 +16,7 @@ module.exports.create = function(request, response, next) {
 // DELETE apartmnet
 module.exports.delete = function(request, response, next)
 {
-  response.render('apartments/delete');
+  response.render('apartments/remove');
 }
 module.exports.delete = function(request, response, next) {
   Apartment.findByIdAndDelete(request.apartment.u_num)
