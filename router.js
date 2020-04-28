@@ -37,7 +37,7 @@ router.put('/properties/:id', authorize, properties.update);
 // Handle apartment requests
 router.get('/apartments/new', apartments.new);
 router.post('/apartments', authorize, apartments.create);
-router.delete('/apartments', authorize, apartments.delete);
+router.delete('/apartments/delete', authorize, apartments.delete);
 //send the post through ajax
 //send the request throug the router to submit the new apparmtnet
 // Export the router
