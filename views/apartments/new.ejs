@@ -6,14 +6,15 @@
     <div class="container-fluid">
       <!-- Default form contact -->
       <form class="text-center border border-light p-5" id="addapp">
+        <!-- Subject -->
 
         <p class="h4 mb-4">Add an apartment</p>
-        <%_ for (const prop of properties) { -%>
-      
-        <li class="nav-item">
-          <a href="/properties/<%= prop.id -%>" class="nav-item nav-link text-info <%= status -%>"><%= prop.name-%></a>
-        </li>
-        <%_ } -%>
+        <select class="browser-default custom-select mb-4">
+          <option value="" disabled>Choose Property</option>
+          <%_ for (const prop of properties) { -%>
+          <option value="<%=prop._id-%>"><%= prop.name-%></option>
+          <%_ } -%>
+        </select>
         <!--<input type="text" name="property" class="form-control mb-4" value="<propid>" >-->
         <!-- Number of rooms -->
 
