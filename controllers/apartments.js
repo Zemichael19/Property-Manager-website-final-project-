@@ -18,6 +18,7 @@ module.exports.create = function(request, response, next) {
     .then(apartment => response.status(201).send(apartment.property))
     .catch(error => next(error));
 };
+
 // DELETE apartmnet
 module.exports.remove = function(request, response, next)
 {
