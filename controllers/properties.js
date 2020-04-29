@@ -43,7 +43,7 @@ module.exports.editing = function(request, response, next) {
   ];
   Promise.all(queries).then(function([property, properties, apartments]) {
     if (property) {
-      response.render('properties/edit', {property: property, properties: properties, apartments:apartments, order:order});
+      response.render('properties/edit', {property: property, properties: properties, apartments:apartments});
     } else {
       next(); // No such property
     }
