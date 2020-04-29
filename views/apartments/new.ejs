@@ -9,7 +9,7 @@
         <!-- Subject -->
 
         <p class="h4 mb-4">Add an apartment</p>
-        <select class="browser-default custom-select mb-4">
+        <select name ="property" class="browser-default custom-select mb-4">
           <option value="" disabled>Choose Property</option>
           <%_ for (const prop of properties) { -%>
           <option value="<%=prop._id-%>"><%= prop.name-%></option>
