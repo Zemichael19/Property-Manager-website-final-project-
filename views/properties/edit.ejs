@@ -16,13 +16,13 @@
     <form id="<%= apart.id -%>" class="form-inline">
       <input type="text" name="u_num" value="<%= apart.u_num -%>" class="form-group col-sm-1">
 
-      <input type="text" name="floor" value="<%= apart.floor -%>" class="form-control form-control-sm m-1">
+      <input type="text" name="floor" value="<%= apart.floor -%>" class="form-group col-sm-1">
 
-      <input type="text" name="sqFoot" value="<%= apart.sqFoot -%>" class="form-control form-control-sm m-1">
+      <input type="text" name="sqFoot" value="<%= apart.sqFoot -%>" class="form-group col-sm-1">
 
-      <input type="text" name="n_rooms" value="<%= apart.n_rooms -%>" class="form-control form-control-sm m-1">
+      <input type="text" name="n_rooms" value="<%= apart.n_rooms -%>" class="form-group col-sm-1">
 
-      <input type="text" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-control form-control-sm m-1">
+      <input type="text" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-group col-sm-1">
 
       <input type="checkbox" name="furnished" value ="true" class="form-control mb-4" placeholder="Furnished">
 
@@ -36,9 +36,9 @@
 
       <input type="checkbox" name="listed" value ="true" class="form-control mb-4" placeholder="Listed">
 
-      <input type="text" name="s_date" value="<%= apart.s_date.toLocaleString().slice(0,apart.s_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
+      <input type="text" name="s_date" value="<%= apart.s_date.toLocaleString().slice(0,apart.s_date.toLocaleString().indexOf(',')) -%>" class="form-group col-sm-1">
 
-      <input type="text" name="e_date" value="<%= apart.e_date.toLocaleString().slice(0,apart.e_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
+      <input type="text" name="e_date" value="<%= apart.e_date.toLocaleString().slice(0,apart.e_date.toLocaleString().indexOf(',')) -%>" class="form-group col-sm-1">
 
       <button class="update btn btn-sm btn-info m-1">Save</button>
       <button class="delete btn btn-sm btn-info m-1">Delete</button>
