@@ -29,18 +29,3 @@ module.exports.delete = function(request, response, next) {
     .then(apartment => apartment ? response.status(200).end() : next())
     .catch(error => next(error));
 };
-
-module.exports.edit = function(request, response, next) {
-  const queries = [
-    Property.findById(request.params.id),
-    Property.find().where('user').equals(request.session.user._id),
-    Apartment.find().where("property").equals(request.params.id)
-  ];
-  Promise.all(queries).then(function([property, properties, apartments]) {
-    if (property) {
-      response.render('apartments/edit', {property: property, properties: properties, apartments:apartments, order:order});
-    } else {
-      next(); // No such property
-    }
-  }).catch(error => next(error));
-};

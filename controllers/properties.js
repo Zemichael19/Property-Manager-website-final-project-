@@ -6,7 +6,6 @@ const Apartment = require('../models/apartment');
 
 // GET /properties
 module.exports.index = function(request, response, next) {
-  console.log(request.session.user._id);
   Property.find().where('user').equals(request.session.user._id)
     .then(properties => response.redirect(`/properties/${properties[0]._id}`))
     .catch(error => next(error));
@@ -24,6 +23,27 @@ module.exports.retrieve = function(request, response, next) {
   Promise.all(queries).then(function([property, properties, apartments]) {
     if (property) {
       response.render('properties/index', {property: property, properties: properties, apartments:apartments, order:order});
+    } else {
+      next(); // No such property
+    }
+  }).catch(error => next(error));
+};
+
+module.exports.edit = function(request, response, next) {
+  Property.find().where('user').equals(request.session.user._id)
+    .then(properties => response.redirect(`/properties/edit/${properties[0]._id}`))
+    .catch(error => next(error));
+};
+
+module.exports.editing = function(request, response, next) {
+  const queries = [
+    Property.findById(request.params.id),
+    Property.find().where('user').equals(request.session.user._id),
+    Apartment.find().where("property").equals(request.params.id)
+  ];
+  Promise.all(queries).then(function([property, properties, apartments]) {
+    if (property) {
+      response.render('properties/edit', {property: property, properties: properties, apartments:apartments, order:order});
     } else {
       next(); // No such property
     }

@@ -28,7 +28,8 @@ router.get('/logout', function(request, response) {
 
 router.get('/properties/new', properties.new);
 
-router.get('/apartments/edit', apartments.edit);
+router.get('/properties/edit', properties.edit);
+router.get('/properties/edit/:id', properties.editing);
 // Handle property requests
 router.get('/properties', properties.index);
 router.get('/properties/:id', properties.retrieve);
