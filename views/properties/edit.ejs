@@ -4,54 +4,58 @@
   <body>
     <%- include('../navbar'); -%>
     <ul class="nav nav-tabs">
-    <%_ for (const prop of properties) { -%>
-      <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
-    <li class="nav-item">
-      <a href="/properties/<%= prop.id -%>" class="nav-item nav-link text-info <%= status -%>"><%= prop.name-%></a>
-    </li>
-    <%_ } -%>
+      <%_ for (const prop of properties) { -%>
+        <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
+      <li class="nav-item">
+        <a href="/properties/edit/<%= prop.id -%>" class="nav-item nav-link text-info <%= status -%>"><%= prop.name-%></a>
+      </li>
+      <%_ } -%>
   </ul>
+  <%_ for (const apart of apartments) { -%>
+    <form id="<%= apart.id -%>" class="form-inline">
+      <select name="course" class="form-control form-control-sm m-1">
+      </select>
+      <input type="time" name="time" value="<%= section.time24 -%>" class="form-control form-control-sm m-1">
+      <input type="text" name="n_rooms" value="<%= apart.n_rooms -%>" class="form-control form-control-sm m-1">
+      <!-- Number of bathrooms -->
+      <input type="text" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-control form-control-sm m-1">
+      <!-- Listed -->
+
+      <input type="checkbox" name="listed" value ="true" class="form-control mb-4" placeholder="Listed">
+      <!-- furnished -->
+      <input type="checkbox" name="furnished" value ="true" class="form-control mb-4" placeholder="Furnished">
+      <!-- Floor num -->
+      <input type="text" name="floor" value="<%= apart.floor -%>" class="form-control form-control-sm m-1">
+      <!-- Square footage -->
+      <input type="text" name="sqFoot" value="<%= apart.sqFoot -%>" class="form-control form-control-sm m-1">
+      <!-- Pets allowed -->
+
+      <input type="checkbox" name="pets" value ="true" class="form-control mb-4" placeholder="Pets">
+      <!-- Laundry avalible -->
+      <input type="checkbox" name="laundry" value ="true" class="form-control mb-4" placeholder="Laundry">
+      <!-- parking avalible -->
+      <input type="checkbox" name="parking" value ="true" class="form-control mb-4" placeholder="Parking">
+      <!-- start date -->
+      <input type="text" name="s_date" value="<%= apart.s_date -%>" class="form-control form-control-sm m-1">
+      <!-- end date -->
+      <input type="text" name="e_date" value="<%= apart.e_date -%>" class="form-control form-control-sm m-1">
+      <!-- ac available -->
+
+      <input type="checkbox" name="ac" value ="true" class="form-control mb-4" placeholder="AC">
+      <!-- Unit num -->
+      <input type="text" name="u_num" value="<%= apart.u_num -%>" class="form-control form-control-sm m-1">
+
+      <button class="update btn btn-sm btn-primary m-1">Save</button>
+      <button class="delete btn btn-sm btn-primary m-1">Delete</button>
+    </form>
+  <%_ } -%>
+  <button id="insert" class="btn btn-sm btn-primary m-1">New section</button>
+
     <div class="container-fluid">
       <div class="row">
         </div>
         <div class="col">
           <main class="p-3">
-
-            <table class="table">
-              <thead>
-                <tr>
-
-                </tr>
-                </thead>
-              <tbody>
-                <%_ for (const apartment of apartments) { -%>
-                  <tr>
-                    <td><%= apartment.u_num -%></td>
-                    <td><%= apartment.floor -%></td>
-                    <td><%= apartment.sqFoot -%></td>
-                    <td><%= apartment.n_rooms -%></td>
-                    <td><%= apartment.n_bathrooms -%></td>
-                    <%_ const status_furnished = (apartment.furnished) ? 'Yes' : 'No' -%>
-                      <td><%= status_furnished -%></td>
-                    <%_ const status_laundry = (apartment.laundry) ? 'Yes' : 'No' -%>
-                      <td><%= status_laundry -%></td>
-                    <%_ const status_ac = (apartment.ac) ? 'Yes' : 'No' -%>
-                      <td><%= status_ac -%></td>
-                    <%_ const status_pets = (apartment.pets) ? 'Yes' : 'No' -%>
-                      <td><%= status_pets -%></td>
-                    <%_ const status_parking = (apartment.parking) ? 'Yes' : 'No' -%>
-                      <td><%= status_parking -%></td>
-                    <%_ const status_listing = (apartment.listed) ? 'Yes' : 'No' -%>
-                      <td><%= status_listing -%></td>
-                    <td><%= apartment.s_date.toDateString().slice(4,apartment.s_date.toDateString().length) -%></td>
-                    <td><%= apartment.e_date.toDateString().slice(4,apartment.s_date.toDateString().length) -%></td>
-
-                  </tr>
-                <%_ } -%>
-              </tbody>
-            </table>
-
-
               <!--respond to button click -->
               <a href="/apartments/remove" class="btn btn-info"> Delete Apartment </a>
               <button id="delete" class="btn btn-info">Delete Property</button>
