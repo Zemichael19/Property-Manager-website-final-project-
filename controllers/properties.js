@@ -39,11 +39,12 @@ module.exports.editing = function(request, response, next) {
   const queries = [
     Property.findById(request.params.id),
     Property.find().where('user').equals(request.session.user._id),
-    Apartment.find().where("property").equals(request.params.id)
+    Apartment.find().where("property").equals(request.params.id),
+    Apartment.findById(request.params.id)
   ];
   Promise.all(queries).then(function([property, properties, apartments]) {
     if (property) {
-      response.render('properties/edit', {property: property, properties: properties, apartments:apartments});
+      response.render('properties/edit', {property: property, properties: properties, apartments:apartments, apartment:apartment});
     } else {
       next(); // No such property
     }
