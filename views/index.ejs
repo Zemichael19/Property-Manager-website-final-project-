@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <%- include('head'); -%>
-  <body>
+
+  <body style="background-image : url('https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60'); background-size:100%" >
       <form>
         <input type="text" name="id">
         <button type="submit">Login</button>
       </form>
-      <a href="/user/signup" class="nav-item nav-link">Logout</a>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script> // Log in
         $('form').on('submit', function(event) {
