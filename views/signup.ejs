@@ -16,9 +16,20 @@
 
 
         <!-- Sign in button -->
-        <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+        <button id="create"class="btn btn-info btn-block my-4" type="submit">Sign in</button>
 
 
     </form>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      // Create a course
+      $('#create').on('submit', function(event) {
+        const form = $(this);
+        event.preventDefault();
+        $.ajax({method: 'post', url: '/users', data: form.serialize()})
+          .done(id => window.location.replace(`/index`))
+          .fail(error => alert(error.responseText));
+      });
+    </script>
   </body>
 </html>
