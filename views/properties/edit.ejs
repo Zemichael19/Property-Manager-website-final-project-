@@ -11,9 +11,15 @@
       </li>
       <%_ } -%>
   </ul>
-
+  <main class="container-fluid">
+    <div class="row">
+      <div class="col">
+            <button id="delete" class="btn btn-info">Delete Property</button>
+      </div>
+    </div>
+  <div class="row">
   <%_ for (const apart of apartments) { -%>
-    <form id="<%= apart.id -%>" class="form-row">
+    <form id="<%= apart.id -%>" class="col card">
       <input type="text" name="u_num" value="<%= apart.u_num -%>" class="form-control form-control-sm m-1">
 
       <input type="text" name="floor" value="<%= apart.floor -%>" class="form-control form-control-sm m-1">
@@ -45,19 +51,9 @@
     </form>
   <%_ } -%>
 
-    <div class="container-fluid">
-      <div class="row">
-        </div>
-        <div class="col">
-          <main class="p-3">
-              <!--respond to button click -->
-              <a href="/apartments/remove" class="btn btn-info"> Delete Apartment </a>
-              <button id="delete" class="btn btn-info">Delete Property</button>
 
-
-          </main>
         </div>
-      </div>
+      </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
 
