@@ -14,7 +14,7 @@
   <main class="container-fluid">
     <div class="row">
       <div class="col">
-            <button id="deletep" class="btn btn-info">Delete Property</button>
+            <button id="delete" class="btn btn-info">Delete Property</button>
       </div>
     </div>
   <div class="row">
@@ -47,7 +47,7 @@
       <input type="text" name="e_date" value="<%= apart.e_date.toLocaleString().slice(0,apart.e_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
 
       <button class="update btn btn-sm btn-info m-1">Save</button>
-      <button class="deletea btn btn-sm btn-info m-1">Delete</button>
+      <button class="delete btn btn-sm btn-info m-1">Delete</button>
     </form>
   <%_ } -%>
         </div>
@@ -56,15 +56,15 @@
     <script>
 
       // Update a course
-      $('#update').on('submit', function(event) {
-        const form = $(this);
+      $('.update').on('click', function(event) {
+        const form = $(this).closest('form');
         event.preventDefault();
-        $.ajax({method: 'put', url: '/properties/<%= property.id -%>', data: form.serialize()})
+        $.ajax({method: 'put', url:`/apartments/${form.attr('id')}`, data: form.serialize()})
           .fail(error => alert(error.responseText));
       });
 
       // Delete a course
-      $('#deletep').on('click', function(event) {
+      $('#delete').on('click', function(event) {
         event.preventDefault();
         $.ajax({method: 'delete', url: '/properties/<%= property.id -%>'})
           .done(() => window.location.replace('/properties'))
@@ -72,10 +72,11 @@
       });
 
       // Delete a course
-      $('#deletea').on('click', function(event) {
+      $('.delete').on('click', function(event) {
         event.preventDefault();
-        $.ajax({method: 'delete', url: '/properties/<%= apartment.id -%>'})
-          .done(() => window.location.replace('/properties'))
+        const form = $(this).closest('form');
+        $.ajax({method: 'delete', url: `/apartments/${form.attr('id')}`})
+          .done(() => window.location.reload())
           .fail(error => alert(error.responseText));
       });
     </script>
