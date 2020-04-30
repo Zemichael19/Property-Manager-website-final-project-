@@ -25,7 +25,9 @@ router.get('/logout', function(request, response) {
   response.redirect('/');
 });
 
-router.get('signup', properties.new);
+router.get('/signup', function(request, response) {
+  response.render('signup');
+});
 router.get('/properties/new', properties.new);
 
 router.get('/properties/edit', properties.edit);
@@ -40,7 +42,7 @@ router.delete('/properties/:id', authorize, properties.delete);
 // Handle apartment requests
 router.get('/apartments/new', apartments.new);
 router.post('/apartments', authorize, apartments.create);
-router.delete('/apartments', authorize, apartments.delete);
+router.delete('/apartments/:id', authorize, apartments.delete);
 router.put('/apartments/:id', authorize, apartments.update);
 //send the post through ajax
 //send the request throug the router to submit the new apparmtnet

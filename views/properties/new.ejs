@@ -26,7 +26,6 @@
     <script>
       // Create a course
       $('#create').on('submit', function(event) {
-        console.log("hello2");
         const form = $(this);
         event.preventDefault();
         $.ajax({method: 'post', url: '/properties', data: form.serialize()})
