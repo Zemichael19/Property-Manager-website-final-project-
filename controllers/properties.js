@@ -11,7 +11,7 @@ module.exports.index = function(request, response, next) {
       if (property) {
         response.redirect(`/properties/${properties[0]._id}`);
       } else {
-        response.redirect('/properties/new}');
+        response.redirect('/properties/new');
       }
     }).catch(error => next(error));
 };
