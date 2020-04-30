@@ -74,7 +74,7 @@
       // Delete a course
       $('#deletea').on('click', function(event) {
         event.preventDefault();
-        $.ajax({method: 'delete', url: '/apartments/<%= apartment.id -%>'})
+        $.ajax({method: 'delete', url: '/properties/<%= apartment.id -%>'})
           .done(() => window.location.replace('/properties'))
           .fail(error => alert(error.responseText));
       });
