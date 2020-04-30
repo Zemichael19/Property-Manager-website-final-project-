@@ -25,7 +25,7 @@ router.get('/logout', function(request, response) {
   response.redirect('/');
 });
 
-
+router.get('signup', properties.new);
 router.get('/properties/new', properties.new);
 
 router.get('/properties/edit', properties.edit);
