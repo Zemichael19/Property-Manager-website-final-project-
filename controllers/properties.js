@@ -7,8 +7,8 @@ const Apartment = require('../models/apartment');
 // GET /properties
 module.exports.index = function(request, response, next) {
   Property.find().where('user').equals(request.session.user._id)
-    .then(function([property]){
-      if (property) {
+    .then(function([properties]){
+      if (properties) {
         response.redirect(`/properties/${properties[0]._id}`);
       } else {
         response.redirect('/properties/new');
