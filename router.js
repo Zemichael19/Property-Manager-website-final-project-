@@ -25,9 +25,12 @@ router.get('/logout', function(request, response) {
   response.redirect('/');
 });
 
+// handle user requests
 router.get('/signup', function(request, response) {
   response.render('signup');
 });
+router.post('/signup', authorize, users.create);
+
 router.get('/properties/new', properties.new);
 
 router.get('/properties/edit', properties.edit);

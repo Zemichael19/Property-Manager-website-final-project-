@@ -12,3 +12,9 @@ module.exports.login = function(request, response, next) {
       }
     }).catch(error => next(error));
 };
+
+module.exports.create = function(request, response, next) {
+  User.create(request.body)
+    .then(property => response.status(201).send(property.id))
+    .catch(error => next(error));
+};
