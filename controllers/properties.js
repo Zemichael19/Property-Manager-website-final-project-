@@ -67,10 +67,3 @@ module.exports.delete = function(request, response, next) {
     .then(property => property ? response.status(200).end() : next())
     .catch(error => next(error));
 };
-
-// PUT /properties/:id (with the changes in the request body)
-module.exports.update = function(request, response, next) {
-  Property.findByIdAndUpdate(request.params.id, request.body)
-    .then(property => property ? response.status(200).end() : next())
-    .catch(error => next(error));
-};
