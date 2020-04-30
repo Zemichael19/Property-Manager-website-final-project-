@@ -20,12 +20,14 @@ module.exports.create = function(request, response, next) {
 };
 
 // DELETE apartmnet
-module.exports.remove = function(request, response, next)
-{
-  response.render('apartments/remove');
-}
 module.exports.delete = function(request, response, next) {
-  Apartment.findByIdAndDelete(request.apartment.u_num)
+  Apartment.findByIdAndDelete(request.params.id)
+    .then(apartment => apartment ? response.status(200).end() : next())
+    .catch(error => next(error));
+};
+
+module.exports.update = function(request, response, next) {
+  Apartment.findByIdAndUpdate(request.params.id, request.body)
     .then(apartment => apartment ? response.status(200).end() : next())
     .catch(error => next(error));
 };

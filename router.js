@@ -35,13 +35,13 @@ router.get('/properties', properties.index);
 router.get('/properties/:id', properties.retrieve);
 router.post('/properties', authorize, properties.create);
 router.delete('/properties/:id', authorize, properties.delete);
-router.put('/properties/:id', authorize, properties.update);
+
 
 // Handle apartment requests
 router.get('/apartments/new', apartments.new);
 router.post('/apartments', authorize, apartments.create);
-router.get('/apartments/remove', apartments.remove);
 router.delete('/apartments', authorize, apartments.delete);
+router.put('/apartments/:id', authorize, apartments.update);
 //send the post through ajax
 //send the request throug the router to submit the new apparmtnet
 // Export the router
