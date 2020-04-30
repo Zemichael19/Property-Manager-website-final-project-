@@ -47,11 +47,9 @@
       <input type="text" name="e_date" value="<%= apart.e_date.toLocaleString().slice(0,apart.e_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
 
       <button class="update btn btn-sm btn-info m-1">Save</button>
-      <button class="delete btn btn-sm btn-info m-1">Delete</button>
+      <button class="deletea btn btn-sm btn-info m-1">Delete</button>
     </form>
   <%_ } -%>
-
-
         </div>
       </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -69,6 +67,14 @@
       $('#deletep').on('click', function(event) {
         event.preventDefault();
         $.ajax({method: 'delete', url: '/properties/<%= property.id -%>'})
+          .done(() => window.location.replace('/properties'))
+          .fail(error => alert(error.responseText));
+      });
+
+      // Delete a course
+      $('#deletea').on('click', function(event) {
+        event.preventDefault();
+        $.ajax({method: 'delete', url: '/apartments/<%= apartment.id -%>'})
           .done(() => window.location.replace('/properties'))
           .fail(error => alert(error.responseText));
       });
