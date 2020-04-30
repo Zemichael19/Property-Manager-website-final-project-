@@ -36,9 +36,15 @@ module.exports.retrieve = function(request, response, next) {
 
 module.exports.edit = function(request, response, next) {
   Property.find().where('user').equals(request.session.user._id)
-    .then(properties => response.redirect(`/properties/edit/${properties[0]._id}`))
-    .catch(error => next(error));
+    .then(function(properties){
+      if (properties.length) {
+        response.redirect(`/properties/${properties[0]._id}`);
+      } else {
+        response.redirect('/properties/new');
+      }
+    }).catch(error => next(error));
 };
+
 
 module.exports.editing = function(request, response, next) {
   const queries = [
