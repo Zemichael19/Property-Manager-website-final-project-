@@ -29,7 +29,7 @@ router.get('/logout', function(request, response) {
 router.get('/signup', function(request, response) {
   response.render('signup');
 });
-router.post('/signup', authorize, users.create);
+router.post('/users', users.create);
 
 router.get('/properties/new', properties.new);
 
