@@ -63,6 +63,7 @@ module.exports.editing = function(request, response, next) {
 
 // POST /properties (with the new course in the request body)
 module.exports.create = function(request, response, next) {
+  request.body.user = request.session.user._id;
   Property.create(request.body)
     .then(property => response.status(201).send(property.id))
     .catch(error => next(error));
