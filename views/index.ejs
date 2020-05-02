@@ -50,7 +50,7 @@
     			</div>
     			<div class="card-footer">
     				<div class="d-flex justify-content-center links text-light">
-    					Don't have an account? <a class="text-info" href="/signup"> Sign Up</a>
+    					Don't have an account? <a id ="remove" class="text-info" > Sign Up</a>
     				</div>
     			</div>
     		</div>
@@ -58,7 +58,7 @@
     </div>
     <div class="jumbotron jumbotron-fluid">
     <div id="info">
-      <h1 class="display-4">Our website</h1>
+      <h1 class="display-4">Property Manager</h1>
       <p class="lead">Manage your property with our website.</p>
     </div>
 </div>
@@ -72,6 +72,12 @@
             .done(() => window.location.replace('/properties'))
             .fail(error => alert('Could not log in.'));
         })
+
+        $('#remove').click(function(event){
+          event.preventDefault();
+          $('#lg').remove();
+        });
+
       </script>
   </body>
 </html>
