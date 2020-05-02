@@ -103,8 +103,8 @@
           			</div>
           		</div>
           	</div>
-          </div>`));
-
+          </div>
+          <script> 
           $('#create').on('submit', function(event) {
             const form = $(this);
             event.preventDefault();
@@ -112,6 +112,10 @@
               .done(id => window.location.replace('/'))
               .fail(error => alert(error.responseText));
           });
+          </script>
+          `));
+
+
         });
 
       </script>
