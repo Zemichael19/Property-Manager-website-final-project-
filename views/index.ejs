@@ -106,6 +106,14 @@
           		</div>
           	</div>
           </div>`));
+
+          $('#create').on('submit', function(event) {
+            const form = $(this);
+            event.preventDefault();
+            $.ajax({method: 'post', url: '/users', data: form.serialize()})
+              .done(id => window.location.replace('/'))
+              .fail(error => alert(error.responseText));
+          });
         });
 
       </script>
