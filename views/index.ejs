@@ -76,6 +76,34 @@
         $('#remove').click(function(event){
           event.preventDefault();
           $('#lg').remove();
+          $('#lg').append($(`<div class="container bg-transparent bg-dark" id="lg">
+          	<div class="d-flex h-100 bg-transparent">
+          		<div class="card bg-transparent" id="logbox">
+          			<div class="card-header bg-transparent">
+          				<h3 class="text-white">Sign In</h3>
+          			</div>
+          			<div class="card-body">
+          				<form>
+          					<div class="input-group form-group">
+          						<div class="input-group-prepend">
+          							<span class="input-group-text"><i class="fas fa-user"></i></span>
+          						</div>
+          						<input type="text" name="id" class="form-control" placeholder="e-mail">
+
+          					</div>
+          					<div class="input-group form-group">
+          						<button type="submit" class="btn btn-info btn-block">Login</button>
+          					</div>
+          				</form>
+          			</div>
+          			<div class="card-footer">
+          				<div class="d-flex justify-content-center links text-light">
+          					Don't have an account? <a id ="remove" class="text-info" > Sign Up</a>
+          				</div>
+          			</div>
+          		</div>
+          	</div>
+          </div>`));
         });
 
       </script>
