@@ -97,7 +97,7 @@
                     <div>
                     <input type="text" name = "name" class="form-control" placeholder="Full Name">
                   </div>
-                  <button class="btn btn-info btn-block" type="submit">Sign Up</button>
+                  <button class="card-footer btn btn-info btn-block" type="submit">Sign Up</button>
           				</form>
           			</div>
 
@@ -108,7 +108,6 @@
         });
 
         $(document).on('submit','#create',function(event) {
-          console.log("arsenal");
           const form = $(this);
           event.preventDefault();
           $.ajax({method: 'post', url: '/users', data: form.serialize()})
