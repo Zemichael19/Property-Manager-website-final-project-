@@ -108,7 +108,7 @@
           `));
         });
 
-        $('#create').on('submit', function(event) {
+        $(document).on('submit','#create',function(event) {
           console.log("arsenal");
           const form = $(this);
           event.preventDefault();
