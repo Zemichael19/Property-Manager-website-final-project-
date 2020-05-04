@@ -30,17 +30,20 @@
 
       <input type="text" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-control form-control-sm m-1">
 
-      <input type="checkbox" name="furnished" value ="true" class="form-control mb-4" placeholder="Furnished">
+      <div class="w-25">
+        <input type="checkbox" name="furnished" value ="true" class="form-control mb-4" placeholder="Furnished">
 
-      <input type="checkbox" name="laundry" value ="true" class="form-control mb-4" placeholder="Laundry">
+        <input type="checkbox" name="laundry" value ="true" class="form-control mb-4" placeholder="Laundry">
 
-      <input type="checkbox" name="ac" value ="true" class="form-control mb-4" placeholder="AC">
+        <input type="checkbox" name="ac" value ="true" class="form-control mb-4" placeholder="AC">
 
-      <input type="checkbox" name="pets" value ="true" class="form-control mb-4" placeholder="Pets">
+        <input type="checkbox" name="pets" value ="true" class="form-control mb-4" placeholder="Pets">
 
-      <input type="checkbox" name="parking" value ="true" class="form-control mb-4" placeholder="Parking">
+        <input type="checkbox" name="parking" value ="true" class="form-control mb-4" placeholder="Parking">
 
-      <input type="checkbox" name="listed" value ="true" class="form-control mb-4" placeholder="Listed">
+        <input type="checkbox" name="listed" value ="true" class="form-control mb-4" placeholder="Listed">
+      </div>
+
 
       <input type="text" name="s_date" value="<%= apart.s_date.toLocaleString().slice(0,apart.s_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
 
