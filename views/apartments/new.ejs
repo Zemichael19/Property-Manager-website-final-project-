@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <%- include('../head'); -%>
   <body>
     <%- include('../navbar'); -%>
@@ -31,9 +34,15 @@
         <!-- end date -->
         <input type="text" name="e_date" class="form-control mb-4" placeholder="End date">
         <!-- furnished -->
-        <div class="custom-control custom-checkbox form-check">
-          <input class="custom-control-input" type="checkbox" name="furnished" value ="true" id="Furnished">
-          <label class="custom-control-label" for="Furnished">Furnished</label>
+        <div class="[ form-group ]">
+          <input type="checkbox" name="furnished" value ="true" id="Furnished" autocomplete="off">
+          <div class="[ btn-group ]">
+            <label for="Furnished" class="[ btn btn-default ]">
+                    <span class="[ glyphicon glyphicon-ok ]"></span>
+                    <span> </span>
+            </label>
+            <label class="custom-control-label" for="Furnished">Furnished</label>
+        </div>
         </div>
         <!-- Laundry avalible -->
         <div class="custom-control custom-checkbox form-check">
@@ -42,7 +51,7 @@
         </div>
         <!-- ac available -->
         <div class="custom-control custom-checkbox form-check">
-          <input class="custom-control-input" type="checkbox" name="ac" value ="true" id = "AC">
+          <input class="custom-control-input " type="checkbox" name="ac" value ="true" id = "AC">
           <label class="custom-control-label" for="AC">AC</label>
         </div>
           <!-- Pets allowed -->
@@ -63,9 +72,7 @@
 
 
         <!-- submit button -->
-        <div>
-          <button class="btn btn-info btn-block" type="submit">Submit</button>
-        </div>
+        <button class="btn btn-info btn-block" type="submit">Submit</button>
 
       </form>
 <!-- Default form contact -->
