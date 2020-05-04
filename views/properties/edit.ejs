@@ -21,34 +21,31 @@
   <%_ for (const apart of apartments) { -%>
     <form id="<%= apart.id -%>" class="col card">
       <div class="w-25">
-        <input type="text" name="u_num" value="<%= apart.u_num -%>" class="form-control form-control-sm m-1">
+        <p>Unit</p><input type="text" name="u_num" value="<%= apart.u_num -%>" class="form-control form-control-sm m-1">
 
-        <input type="text" name="floor" value="<%= apart.floor -%>" class="form-control form-control-sm m-1">
+        <p>Floor</p><input type="text" name="floor" value="<%= apart.floor -%>" class="form-control form-control-sm m-1">
 
-        <input type="text" name="sqFoot" value="<%= apart.sqFoot -%>" class="form-control form-control-sm m-1">
+        <p>Sq/ft</p><input type="text" name="sqFoot" value="<%= apart.sqFoot -%>" class="form-control form-control-sm m-1">
 
-        <input type="text" name="n_rooms" value="<%= apart.n_rooms -%>" class="form-control form-control-sm m-1">
+        <p>Rooms</p><input type="text" name="n_rooms" value="<%= apart.n_rooms -%>" class="form-control form-control-sm m-1">
 
-        <input type="text" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-control form-control-sm m-1">
+        <p>Bathrooms</p><input type="text" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-control form-control-sm m-1">
 
+        <p>Furnished</p><input type="checkbox" name="furnished" value ="true" class="form-control mb-4" placeholder="Furnished">
 
-          <input type="checkbox" name="furnished" value ="true" class="form-control mb-4" placeholder="Furnished">
+        <p>Laundry</p><input type="checkbox" name="laundry" value ="true" class="form-control mb-4" placeholder="Laundry">
 
-          <input type="checkbox" name="laundry" value ="true" class="form-control mb-4" placeholder="Laundry">
+        <p>AC</p><input type="checkbox" name="ac" value ="true" class="form-control mb-4" placeholder="AC">
 
-          <input type="checkbox" name="ac" value ="true" class="form-control mb-4" placeholder="AC">
+        <p>Pets</p><input type="checkbox" name="pets" value ="true" class="form-control mb-4" placeholder="Pets">
 
-          <input type="checkbox" name="pets" value ="true" class="form-control mb-4" placeholder="Pets">
+        <p>Parking</p><input type="checkbox" name="parking" value ="true" class="form-control mb-4" placeholder="Parking">
 
-          <input type="checkbox" name="parking" value ="true" class="form-control mb-4" placeholder="Parking">
+        <p>Listed</p><input type="checkbox" name="listed" value ="true" class="form-control mb-4" placeholder="Listed">
 
-          <input type="checkbox" name="listed" value ="true" class="form-control mb-4" placeholder="Listed">
+        <p>Lease-start</p><input type="text" name="s_date" value="<%= apart.s_date.toLocaleString().slice(0,apart.s_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
 
-
-
-        <input type="text" name="s_date" value="<%= apart.s_date.toLocaleString().slice(0,apart.s_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
-
-        <input type="text" name="e_date" value="<%= apart.e_date.toLocaleString().slice(0,apart.e_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
+        <p>Lease-end</p><input type="text" name="e_date" value="<%= apart.e_date.toLocaleString().slice(0,apart.e_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
       </div>
 
 
