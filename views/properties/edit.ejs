@@ -26,14 +26,20 @@
 
         <label for="Floor<%= apart.id -%>">Floor</label>
         <input id= "Floor<%= apart.id -%>" type="text" name="floor" value="<%= apart.floor -%>" class="form-control form-control-sm m-1">
+
+        <label for="sqFoot<%= apart.id -%>">sqFoot</label>
         <input type="text" name="sqFoot" value="<%= apart.sqFoot -%>" class="form-control form-control-sm m-1">
 
+        <label for="sqFoot<%= apart.id -%>">sqFoot</label>
         <input type="text" name="n_rooms" value="<%= apart.n_rooms -%>" class="form-control form-control-sm m-1">
 
+        <label for="Rooms<%= apart.id -%>">Rooms</label>
         <input type="text" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-control form-control-sm m-1">
 
+        <label for="Lease-start<%= apart.id -%>">Lease-start</label>
         <input type="text" name="s_date" value="<%= apart.s_date.toLocaleString().slice(0,apart.s_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
 
+        <label for="Lease-end<%= apart.id -%>">Lease-end</label>
         <input type="text" name="e_date" value="<%= apart.e_date.toLocaleString().slice(0,apart.e_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
         <!-- furnished -->
         <div class="custom-control custom-checkbox form-check">
