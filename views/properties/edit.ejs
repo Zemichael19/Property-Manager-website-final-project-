@@ -37,10 +37,10 @@
         <input id= "Bathrooms<%= apart.id -%>" type="number" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-control form-control-sm m-1">
 
         <label for="Lease-start<%= apart.id -%>">Lease-start</label>
-        <input id= "Lease-start<%= apart.id -%>" type="date" name="s_date" value="<%= apart.s_date.toLocaleString().slice(0,apart.s_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
+        <input id= "Lease-start<%= apart.id -%>" type="date" name="s_date" value="<%= apart.s_date -%>" class="form-control form-control-sm m-1">
 
         <label for="Lease-end<%= apart.id -%>">Lease-end</label>
-        <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date.toLocaleString().slice(0,apart.e_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
+        <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date -%>" class="form-control form-control-sm m-1">
         <!-- furnished -->
         <div class="custom-control custom-checkbox form-check">
           <input class="custom-control-input" type="checkbox" name="furnished" value ="true" id="Furnished<%= apart.id -%>">
