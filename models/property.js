@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 
 // Define the schema
 const Property = new mongoose.Schema({
-  user: String,
-  address: String,
-  name: String
+  user: {type: String, required:true, maxlength: 70, trim: true},
+  address: {type: String, maxlength: 100, trim: true},
+  name: {type: String, maxlength: 30, trim: true}
 });
 
 // Export the model
