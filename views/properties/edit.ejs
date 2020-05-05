@@ -21,14 +21,11 @@
   <%_ for (const apart of apartments) { -%>
     <form id="<%= apart.id -%>" class="col card w-50">
       <div class="w-50">
-        <div class="form-group col-md-6">
-          <label for="Unit<%= apart.id -%>">Unit</label>
-          <input id= "Unit<%= apart.id -%>" type="text" name="u_num" value="<%= apart.u_num -%>" class="form-control form-control-sm m-1">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="Floor<%= apart.id -%>">Floor</label>
-          <input id= "Floor<%= apart.id -%>" type="text" name="floor" value="<%= apart.floor -%>" class="form-control form-control-sm m-1">
-        </div>
+        <label for="Unit<%= apart.id -%>">Unit</label>
+        <input id= "Unit<%= apart.id -%>" type="text" name="u_num" value="<%= apart.u_num -%>" class="form-control form-control-sm m-1">
+
+        <label for="Floor<%= apart.id -%>">Floor</label>
+        <input id= "Floor<%= apart.id -%>" type="text" name="floor" value="<%= apart.floor -%>" class="form-control form-control-sm m-1">
         <input type="text" name="sqFoot" value="<%= apart.sqFoot -%>" class="form-control form-control-sm m-1">
 
         <input type="text" name="n_rooms" value="<%= apart.n_rooms -%>" class="form-control form-control-sm m-1">
