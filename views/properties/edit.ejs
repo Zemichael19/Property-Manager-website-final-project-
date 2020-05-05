@@ -2,7 +2,7 @@
 <html>
   <%- include('../head'); -%>
   <body>
-    <%- include('../navbar', {active: '/properties/edit'}); -%>
+    <%- include('../navbar'); -%>
     <ul class="nav nav-tabs">
       <%_ for (const prop of properties) { -%>
         <%_ const status = (prop.id === property.id) ? 'active bg-dark' : 'inactive' -%>
