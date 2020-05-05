@@ -31,19 +31,19 @@ router.get('/signup', function(request, response) {
 });
 router.post('/users', users.create);
 
-router.get('/properties/new', properties.new);
+router.get('/properties/new',authorize, properties.new);
 
-router.get('/properties/edit', properties.edit);
-router.get('/properties/edit/:id', properties.editing);
+router.get('/properties/edit', authorize,properties.edit);
+router.get('/properties/edit/:id', authorize,properties.editing);
 // Handle property requests
-router.get('/properties', properties.index);
-router.get('/properties/:id', properties.retrieve);
+router.get('/properties', authorize,properties.index);
+router.get('/properties/:id', authorize,properties.retrieve);
 router.post('/properties', authorize, properties.create);
 router.delete('/properties/:id', authorize, properties.delete);
 
 
 // Handle apartment requests
-router.get('/apartments/new', apartments.new);
+router.get('/apartments/new',authorize, apartments.new);
 router.post('/apartments', authorize, apartments.create);
 router.delete('/apartments/:id', authorize, apartments.delete);
 router.put('/apartments/:id', authorize, apartments.update);
