@@ -37,15 +37,31 @@
           <label class="custom-control-label" for="Furnished<%= apart.id -%>">Furnished</label>
         </div>
 
-        <input type="checkbox" name="laundry" value ="true" class="form-control mb-4" placeholder="Laundry">
-
-        <input type="checkbox" name="ac" value ="true" class="form-control mb-4" placeholder="AC">
-
-        <input type="checkbox" name="pets" value ="true" class="form-control mb-4" placeholder="Pets">
-
-        <input type="checkbox" name="parking" value ="true" class="form-control mb-4" placeholder="Parking">
-
-        <input type="checkbox" name="listed" value ="true" class="form-control mb-4" placeholder="Listed">
+        <!-- Laundry avalible -->
+        <div class="custom-control custom-checkbox form-check">
+          <input class="custom-control-input" type="checkbox" name="laundry" value ="true" id = "Laundry<%= apart.id -%>">
+          <label class="custom-control-label" for="Laundry<%= apart.id -%>">Laundry</label>
+        </div>
+        <!-- ac available -->
+        <div class="custom-control custom-checkbox form-check">
+          <input class="custom-control-input " type="checkbox" name="ac" value ="true" id = "AC<%= apart.id -%>">
+          <label class="custom-control-label" for="AC<%= apart.id -%>">AC</label>
+        </div>
+          <!-- Pets allowed -->
+        <div class="custom-control custom-checkbox form-check">
+          <input class="custom-control-input" type="checkbox" name="pets" value ="true" id = "Pets<%= apart.id -%>">
+          <label class="custom-control-label" for="Pets<%= apart.id -%>">Pets</label>
+        </div>
+          <!-- parking avalible -->
+        <div class="custom-control custom-checkbox form-check">
+          <input class="custom-control-input" type="checkbox" name="parking" value ="true" id = "Parking<%= apart.id -%>">
+          <label class="custom-control-label" for="Parking<%= apart.id -%>">Parking</label>
+        </div>
+          <!-- Listed -->
+        <div class="custom-control custom-checkbox form-check">
+          <input class="custom-control-input" type="checkbox" name="listed" value ="true" id="Listed<%= apart.id -%>">
+          <label class="custom-control-label" for="Listed<%= apart.id -%>">Listed</label>
+        </div>
 
         <input type="text" name="s_date" value="<%= apart.s_date.toLocaleString().slice(0,apart.s_date.toLocaleString().indexOf(',')) -%>" class="form-control form-control-sm m-1">
 
