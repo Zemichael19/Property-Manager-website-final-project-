@@ -59,8 +59,8 @@
                     <%_ if (apartment.s_date)
                       <td><%=  apartment.s_date.toDateString().slice(4,apartment.s_date.toDateString().length) -%></td>
                     -%>
-                    <%_ if (apartment.e_date) 
-                      <td><%= if (apartment.e_date) apartment.e_date.toDateString().slice(4,apartment.s_date.toDateString().length) -%></td>
+                    <%_ if (apartment.e_date)
+                      <td><%= apartment.e_date.toDateString().slice(4,apartment.s_date.toDateString().length) -%></td>
                     -%>
                   </tr>
                 <%_ } -%>
