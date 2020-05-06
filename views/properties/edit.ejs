@@ -19,7 +19,7 @@
     </div>
   <div class="row">
   <%_ for (const apart of apartments) { -%>
-    <form id="<%= apart.id -%>" class="card" style="width: 18rem;">
+    <form id="<%= apart.id -%>" class="card m-1 p-1" style="width: 18rem;">
 
         <label for="Unit<%= apart.id -%>">Unit</label>
         <input id= "Unit<%= apart.id -%>" type="number" name="u_num" value="<%= apart.u_num -%>" class="form-control form-control-sm m-1">
