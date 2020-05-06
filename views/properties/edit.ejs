@@ -89,7 +89,7 @@
         const form = $(this).closest('form');
         event.preventDefault();
         $.ajax({method: 'put', url:`/apartments/${form.attr('id')}`, data: form.serialize()})
-          .done(() => prompt('Change Successful'))
+          .done(() => alert('Change Successful'))
           .fail(error => alert(error.responseText));
       });
 
