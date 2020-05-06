@@ -41,11 +41,19 @@
 
         <label for="Lease-end<%= apart.id -%>">Lease-end</label>
         <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date -%>" class="form-control form-control-sm m-1 p-1">
+
         <!-- furnished -->
-        <div class="custom-control custom-checkbox form-check">
-          <input class="custom-control-input" type="checkbox" name="furnished" value ="true" id="Furnished<%= apart.id -%>">
-          <label class="custom-control-label" for="Furnished<%= apart.id -%>">Furnished</label>
-        </div>
+        <%_ if (apart.furnished){-%>
+          <div class="custom-control custom-checkbox form-check">
+            <input class="custom-control-input" type="checkbox" name="furnished" value ="true" id="Furnished<%= apart.id -%>" checked>
+            <label class="custom-control-label" for="Furnished<%= apart.id -%>">Furnished</label>
+          </div>
+        <%_} else{-%>
+          <div class="custom-control custom-checkbox form-check">
+            <input class="custom-control-input" type="checkbox" name="furnished" value ="true" id="Furnished<%= apart.id -%>">
+            <label class="custom-control-label" for="Furnished<%= apart.id -%>">Furnished</label>
+          </div>
+        <%_}-%>
 
         <!-- Laundry avalible -->
         <div class="custom-control custom-checkbox form-check">
