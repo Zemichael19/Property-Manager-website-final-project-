@@ -56,9 +56,12 @@
                       <td><%= status_parking -%></td>
                     <%_ const status_listing = (apartment.listed) ? 'Yes' : 'No' -%>
                       <td><%= status_listing -%></td>
-                    <td><%= if (apartment.s_date) apartment.s_date.toDateString().slice(4,apartment.s_date.toDateString().length) -%></td>
-                    <td><%= if (apartment.e_date) apartment.e_date.toDateString().slice(4,apartment.s_date.toDateString().length) -%></td>
-
+                    <%_ if (apartment.s_date)
+                      <td><%=  apartment.s_date.toDateString().slice(4,apartment.s_date.toDateString().length) -%></td>
+                    -%>
+                    <%_ if (apartment.e_date) 
+                      <td><%= if (apartment.e_date) apartment.e_date.toDateString().slice(4,apartment.s_date.toDateString().length) -%></td>
+                    -%>
                   </tr>
                 <%_ } -%>
               </tbody>
