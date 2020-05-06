@@ -56,30 +56,66 @@
         <%_}-%>
 
         <!-- Laundry avalible -->
-        <div class="custom-control custom-checkbox form-check">
-          <input class="custom-control-input" type="checkbox" name="laundry" value ="true" id = "Laundry<%= apart.id -%>">
-          <label class="custom-control-label" for="Laundry<%= apart.id -%>">Laundry</label>
-        </div>
+        <%_ if (apart.laundry){-%>
+          <div class="custom-control custom-checkbox form-check">
+            <input class="custom-control-input" type="checkbox" name="laundry" value ="true" id = "Laundry<%= apart.id -%>" checked>
+            <label class="custom-control-label" for="Laundry<%= apart.id -%>">Laundry</label>
+          </div>
+        <%_} else{-%>
+          <div class="custom-control custom-checkbox form-check">
+            <input class="custom-control-input" type="checkbox" name="laundry" value ="true" id = "Laundry<%= apart.id -%>">
+            <label class="custom-control-label" for="Laundry<%= apart.id -%>">Laundry</label>
+          </div>
+        <%_}-%>
+
         <!-- ac available -->
-        <div class="custom-control custom-checkbox form-check">
-          <input class="custom-control-input " type="checkbox" name="ac" value ="true" id = "AC<%= apart.id -%>">
-          <label class="custom-control-label" for="AC<%= apart.id -%>">AC</label>
-        </div>
+        <%_ if (apart.AC){-%>
+          <div class="custom-control custom-checkbox form-check">
+            <input class="custom-control-input " type="checkbox" name="ac" value ="true" id = "AC<%= apart.id -%>" checked>
+            <label class="custom-control-label" for="AC<%= apart.id -%>">AC</label>
+          </div>
+        <%_} else{-%>
+          <div class="custom-control custom-checkbox form-check">
+            <input class="custom-control-input " type="checkbox" name="ac" value ="true" id = "AC<%= apart.id -%>">
+            <label class="custom-control-label" for="AC<%= apart.id -%>">AC</label>
+          </div>
+        <%_}-%>
           <!-- Pets allowed -->
-        <div class="custom-control custom-checkbox form-check">
-          <input class="custom-control-input" type="checkbox" name="pets" value ="true" id = "Pets<%= apart.id -%>">
-          <label class="custom-control-label" for="Pets<%= apart.id -%>">Pets</label>
-        </div>
+        <%_ if (apart.pets){-%>
+          <div class="custom-control custom-checkbox form-check">
+            <input class="custom-control-input" type="checkbox" name="pets" value ="true" id = "Pets<%= apart.id -%>" checked>
+            <label class="custom-control-label" for="Pets<%= apart.id -%>">Pets</label>
+          </div>
+        <%_} else{-%>
+            <div class="custom-control custom-checkbox form-check">
+              <input class="custom-control-input" type="checkbox" name="pets" value ="true" id = "Pets<%= apart.id -%>" >
+              <label class="custom-control-label" for="Pets<%= apart.id -%>">Pets</label>
+            </div>
+        <%_}-%>
           <!-- parking avalible -->
-        <div class="custom-control custom-checkbox form-check">
-          <input class="custom-control-input" type="checkbox" name="parking" value ="true" id = "Parking<%= apart.id -%>">
-          <label class="custom-control-label" for="Parking<%= apart.id -%>">Parking</label>
-        </div>
+        <%_ if (apart.parking){-%>
+          <div class="custom-control custom-checkbox form-check">
+            <input class="custom-control-input" type="checkbox" name="parking" value ="true" id = "Parking<%= apart.id -%>" checked>
+            <label class="custom-control-label" for="Parking<%= apart.id -%>">Parking</label>
+          </div>
+          <%_} else{-%>
+            <div class="custom-control custom-checkbox form-check">
+              <input class="custom-control-input" type="checkbox" name="parking" value ="true" id = "Parking<%= apart.id -%>">
+              <label class="custom-control-label" for="Parking<%= apart.id -%>">Parking</label>
+            </div>
+        <%_}-%>
           <!-- Listed -->
-        <div class="custom-control custom-checkbox form-check">
-          <input class="custom-control-input" type="checkbox" name="listed" value ="true" id="Listed<%= apart.id -%>">
-          <label class="custom-control-label" for="Listed<%= apart.id -%>">Listed</label>
-        </div>
+        <%_ if (apart.listed){-%>
+          <div class="custom-control custom-checkbox form-check">
+            <input class="custom-control-input" type="checkbox" name="listed" value ="true" id="Listed<%= apart.id -%>" checked>
+            <label class="custom-control-label" for="Listed<%= apart.id -%>">Listed</label>
+          </div>
+        <%_} else{-%>
+          <div class="custom-control custom-checkbox form-check">
+            <input class="custom-control-input" type="checkbox" name="listed" value ="true" id="Listed<%= apart.id -%>">
+            <label class="custom-control-label" for="Listed<%= apart.id -%>">Listed</label>
+          </div>
+        <%_}-%>
 
 
 
