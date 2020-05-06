@@ -22,25 +22,25 @@
     <form id="<%= apart.id -%>" class="card m-1 p-1" style="width: 18rem;">
 
         <label for="Unit<%= apart.id -%>">Unit</label>
-        <input id= "Unit<%= apart.id -%>" type="number" min="0" name="u_num" value="<%= apart.u_num -%>" class="form-control form-control-sm m-1">
+        <input id= "Unit<%= apart.id -%>" type="number" min="0" name="u_num" value="<%= apart.u_num -%>" class="form-control form-control-sm m-1 p-1">
 
         <label for="Floor<%= apart.id -%>">Floor</label>
-        <input id= "Floor<%= apart.id -%>" type="number" min="0"  name="floor" value="<%= apart.floor -%>" class="form-control form-control-sm m-1">
+        <input id= "Floor<%= apart.id -%>" type="number" min="0"  name="floor" value="<%= apart.floor -%>" class="form-control form-control-sm m-1 p-1">
 
         <label for="sq/ft<%= apart.id -%>">sq/ft</label>
-        <input id= "sq/ft<%= apart.id -%>" type="number" min="0" name="sqFoot" value="<%= apart.sqFoot -%>" class="form-control form-control-sm m-1">
+        <input id= "sq/ft<%= apart.id -%>" type="number" min="0" name="sqFoot" value="<%= apart.sqFoot -%>" class="form-control form-control-sm m-1 p-1">
 
         <label for="Rooms<%= apart.id -%>">Rooms</label>
-        <input id= "Rooms<%= apart.id -%>" type="number" min="0" name="n_rooms" value="<%= apart.n_rooms -%>" class="form-control form-control-sm m-1">
+        <input id= "Rooms<%= apart.id -%>" type="number" min="0" name="n_rooms" value="<%= apart.n_rooms -%>" class="form-control form-control-sm m-1 p-1">
 
         <label for="Bathrooms<%= apart.id -%>">Bathrooms</label>
-        <input id= "Bathrooms<%= apart.id -%>" type="number" min="0" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-control form-control-sm m-1">
+        <input id= "Bathrooms<%= apart.id -%>" type="number" min="0" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-control form-control-sm m-1 p-1">
 
         <label for="Lease-start<%= apart.id -%>">Lease-start</label>
-        <input id= "Lease-start<%= apart.id -%>" type="date" name="s_date" value="<%= apart.s_date -%>" class="form-control form-control-sm m-1">
+        <input id= "Lease-start<%= apart.id -%>" type="date" name="s_date" value="<%= apart.s_date -%>" class="form-control form-control-sm m-1 p-1">
 
         <label for="Lease-end<%= apart.id -%>">Lease-end</label>
-        <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date -%>" class="form-control form-control-sm m-1">
+        <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date -%>" class="form-control form-control-sm m-1 p-1">
         <!-- furnished -->
         <div class="custom-control custom-checkbox form-check">
           <input class="custom-control-input" type="checkbox" name="furnished" value ="true" id="Furnished<%= apart.id -%>">
@@ -75,8 +75,8 @@
 
 
 
-      <button class="update btn btn-sm btn-info m-1">Save</button>
-      <button class="delete btn btn-sm btn-info m-1">Delete</button>
+      <button class="update btn btn-sm btn-info m-1 ">Save</button>
+      <button class="delete btn btn-sm btn-info m-1 ">Delete</button>
     </form>
   <%_ } -%>
         </div>
