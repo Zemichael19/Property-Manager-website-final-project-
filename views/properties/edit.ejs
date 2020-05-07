@@ -144,7 +144,7 @@
 
     <div class="alert alert-success alert-dismissible fade show">
         <strong>Success! Your change is successful.</strong>
-        <button type="submit" class="close" data-dismiss="alert">x</button>
+        <button type="submit" class="close" data-dismiss="alert">&times</button>
         </div>
 
         </div>`
@@ -155,7 +155,6 @@
       $(document).on('click','.close',function(event) {
         const form = $(this);
         event.preventDefault();
-      
         $('#alert1').remove();
       });
 
