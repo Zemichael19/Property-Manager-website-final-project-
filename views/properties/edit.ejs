@@ -144,13 +144,13 @@
 
     <div class="alert alert-success alert-dismissible fade show">
         <strong>Success! Your change is successful.</strong>
-        <button id="quit" type="submit" class="close" data-dismiss="alert">x</button>
+        <button type="submit" class="close" data-dismiss="alert">x</button>
         </div>
 
         </div>`
         ));
 
-        $(document).on('submit','#quit',function(event) {
+        $(document).on('submit','.close',function(event) {
           console.log("arsenal");
           $('#alert1').remove();
         });
