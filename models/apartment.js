@@ -19,9 +19,6 @@ const Apartment = new mongoose.Schema({
     u_num: {type:Number, required: true}
 });
 
-Apartment.path('e_date').set(function(e_date) {
-  return new Date(`1/15/2020 ${e_date}`);
-});
 
 // Export the model
 module.exports = mongoose.model('Apartment', Apartment);
