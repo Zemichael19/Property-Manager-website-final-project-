@@ -150,10 +150,13 @@
         </div>`
         ));
 
+        $(document).on('submit','#quit',function(event) {
+          $('#success').remove();
+        });
+
       });
-      $(document).on('submit','#quit',function(event) {
-        $('#success').remove();
-      });
+
+
 
       // Delete a course
       $('#delete').on('click', function(event) {
