@@ -16,6 +16,9 @@
       <div class="col p-1 m-1">
           <button id="delete" class="btn btn-info"><i class="fa fa-trash"></i>Delete Property</button>
       </div>
+      <div id="success">
+
+      </div>
     </div>
   <div class="row">
   <%_ for (const apart of apartments) { -%>
@@ -126,9 +129,7 @@
         </div>
       </main>
 
-    <div id="success">
 
-    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
 
@@ -139,11 +140,11 @@
         $.ajax({method: 'put', url:`/apartments/${form.attr('id')}`, data: form.serialize()})
           .fail(error => alert(error.responseText));
           $('#success').append($(`<div class="bs-example">
-    <!-- Success Alert -->
+
     <div class="alert alert-success alert-dismissible fade show">
         <strong>Success!</strong> Your message has been sent successfully.
         <button type="button" class="close" data-dismiss="alert">&times;</button>`
-        
+
       });
 
       // Delete a course
