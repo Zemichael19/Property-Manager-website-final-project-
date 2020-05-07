@@ -150,15 +150,14 @@
         </div>`
         ));
 
-        $(document).on('submit','.close',function(event) {
-          const form = $(this);
-          event.preventDefault();
-          console.log("arsenal");
-          $('#alert1').remove();
-        });
-
       });
 
+      $(document).on('submit','.close',function(event) {
+        const form = $(this);
+        event.preventDefault();
+        console.log("arsenal");
+        $('#alert1').remove();
+      });
 
 
       // Delete a course
