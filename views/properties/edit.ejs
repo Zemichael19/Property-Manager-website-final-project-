@@ -148,7 +148,11 @@
         `
       ))
 
-      $('#success').fadeOut(300);
+      $(document).ready(function() {
+        $.doTimeout(5000, function() { 
+            $('#success').fadeOut();
+        });
+});
 
       });
 
