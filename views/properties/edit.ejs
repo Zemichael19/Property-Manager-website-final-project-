@@ -139,18 +139,19 @@
         event.preventDefault();
         $.ajax({method: 'put', url:`/apartments/${form.attr('id')}`, data: form.serialize()})
           .fail(error => alert(error.responseText));
-          $('#success').append($(`<div class="bs-example">
+          $('#success').append($(`<div id = "alert1">
+          <div class="bs-example">
 
     <div class="alert alert-success alert-dismissible fade show">
         <strong>Success! Your change is successful.</strong>
         <button id="quit" type="button" class="close" data-dismiss="alert">&times;</button>
-        `
+        </div>`
         ));
 
       });
 
       $('#quit').on('click', function(event) {
-        $('#success').remove();
+        $('.alert1').remove();
       });
 
       // Delete a course
