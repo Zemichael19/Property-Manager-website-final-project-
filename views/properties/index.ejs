@@ -57,10 +57,10 @@
                     <%_ const status_listing = (apartment.listed) ? 'Yes' : 'No' -%>
                       <td><%= status_listing -%></td>
                     <%_ if (apartment.s_date){-%>
-                      <td><%=  apartment.s_date.toUTCString().slice(4,apartment.s_date.toDateString().length) -%></td>
+                      <td><%=  apartment.s_date.toUTCString().slice(4,apartment.s_date.toUTCString().length) -%></td>
                     <%_}-%>
                     <%_ if (apartment.e_date){-%>
-                      <td><%= apartment.e_date.toUTCString().slice(4,apartment.s_date.toDateString().length) -%></td>
+                      <td><%= apartment.e_date.toUTCString().slice(4,apartment.s_date.toUTCString().length) -%></td>
                     <%_}-%>
                   </tr>
                 <%_ } -%>
