@@ -142,11 +142,19 @@
           $('#success').append($(`<div class="bs-example">
 
     <div class="alert alert-success alert-dismissible fade show">
-        <strong>Success! Your change is successful.</strong> 
+        <strong>Success!</strong> Your message has been sent successfully.
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
         `
         ));
 
       });
+
+      $(document).ready(function(){
+    $(".close").click(function(){
+        $("#myAlert").alert('close');
+    });
+}); 
 
       // Delete a course
       $('#delete').on('click', function(event) {
