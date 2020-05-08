@@ -42,10 +42,12 @@
         <label for="Lease-start<%= apart.id -%>">Lease-start</label>
         <input id= "Lease-start<%= apart.id -%>" type="date" name="s_date" value="<%= apart.s_date -%>" class="form-control form-control-sm m-1 p-1">
 
-        <%_ if (apart.e_date){-%>
+        <%_ if (apart.e_date!==null){-%>
           <label for="Lease-end<%= apart.id -%>">Lease-end</label>
           <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date.getUTCFullYear()+'-'+apart.e_date.getUTCMonth()+'-'+apart.e_date.getUTCDate()-%>" class="form-control form-control-sm m-1 p-1">
-        
+        <%_} else{-%>
+          <label for="Lease-end<%= apart.id -%>">Lease-end</label>
+          <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date -%>" class="form-control form-control-sm m-1 p-1">
         <!-- furnished -->
         <%_ if (apart.furnished){-%>
           <div class="custom-control custom-checkbox form-check">
