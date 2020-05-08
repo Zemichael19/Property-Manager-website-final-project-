@@ -39,8 +39,13 @@
         <label for="Bathrooms<%= apart.id -%>">Bathrooms</label>
         <input id= "Bathrooms<%= apart.id -%>" type="number" min="0" name="n_bathrooms" value="<%= apart.n_bathrooms -%>" class="form-control form-control-sm m-1 p-1">
 
-        <label for="Lease-start<%= apart.id -%>">Lease-start</label>
-        <input id= "Lease-start<%= apart.id -%>" type="date" name="s_date" value="<%= apart.s_date -%>" class="form-control form-control-sm m-1 p-1">
+        <%_ if (apart.s_date){-%>
+          <label for="Lease-start<%= apart.id -%>">Lease-start</label>
+          <input id= "Lease-start<%= apart.id -%>" type="date" name="s_date" value="<%= apart.s_date.getUTCFullYear()+'-'+String(apart.s_date.getUTCMonth()+1).padStart(2, '0')+'-'+String(apart.s_date.getUTCDate()).padStart(2, '0') -%>" class="form-control form-control-sm m-1 p-1">
+        <%_} else{-%>
+          <label for="Lease-start<%= apart.id -%>">Lease-start</label>
+          <input id= "Lease-start<%= apart.id -%>" type="date" name="s_date" class="form-control form-control-sm m-1 p-1">
+        <%_}-%>
 
         <%_ if (apart.e_date){-%>
           <label for="Lease-end<%= apart.id -%>">Lease-end</label>
