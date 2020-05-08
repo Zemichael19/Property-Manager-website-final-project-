@@ -43,7 +43,7 @@
         <input id= "Lease-start<%= apart.id -%>" type="date" name="s_date" value="<%= apart.s_date -%>" class="form-control form-control-sm m-1 p-1">
 
         <label for="Lease-end<%= apart.id -%>">Lease-end</label>
-        <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date -%>" class="form-control form-control-sm m-1 p-1">
+        <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date.getFullYear()+'-'+apart.e_date.getUTCMonth()+'-'+apart.e_date.getUTCDate()-%>" class="form-control form-control-sm m-1 p-1">
 
         <!-- furnished -->
         <%_ if (apart.furnished){-%>
