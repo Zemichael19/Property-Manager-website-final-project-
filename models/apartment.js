@@ -19,13 +19,5 @@ const Apartment = new mongoose.Schema({
     u_num: {type:Number, required: true}
 });
 
-Apartment.virtual('edate').get(function() {
-  return this.e_date.toUTCString();
-});
-
-Apartment.virtual('sdate').get(function() {
-  return this.e_date.toUTCString();
-});
-
 // Export the model
 module.exports = mongoose.model('Apartment', Apartment);
