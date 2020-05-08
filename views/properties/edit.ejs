@@ -44,7 +44,7 @@
 
         <%_ if (apart.e_date){-%>
           <label for="Lease-end<%= apart.id -%>">Lease-end</label>
-          <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date.getUTCFullYear()+'-'+apart.e_date.getUTCMonth()+1+'-'+apart.e_date.getUTCDate() -%>" class="form-control form-control-sm m-1 p-1">
+          <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" value="<%= apart.e_date.getUTCFullYear()+'-'+String(apart.e_date.getUTCMonth()+1).padStart(2, '0')+'-'+String(apart.e_date.getUTCDate()).padStart(2, '0') -%>" class="form-control form-control-sm m-1 p-1">
         <%_} else{-%>
           <label for="Lease-end<%= apart.id -%>">Lease-end</label>
           <input id= "Lease-end<%= apart.id -%>" type="date" name="e_date" class="form-control form-control-sm m-1 p-1">
